@@ -46,7 +46,7 @@ const style = (
       margin-bottom: 1rem;
       margin-top: 2rem;
       text-align: center;
-      color: white;
+      color: black;
       font-family: var(--font4);
       font-size: 0.8rem;
     }

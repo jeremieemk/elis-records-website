@@ -1,10 +1,11 @@
 import Layout from "../components/Layout";
+import LandingText from "../components/LandingText";
 
 function Index() {
   return (
     <div>
       <Layout>
-        <div>TEST</div>
+        <LandingText />
       </Layout>
 
       {style}
