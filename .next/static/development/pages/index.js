@@ -127,7 +127,7 @@ var style = __jsx("style", {
     lineNumber: 19
   },
   __self: undefined
-}, "\n    .LandingText-wrapper {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      margin: var(--global-margin);\n    }\n    .arrow {\n      margin-top: 2rem;\n      width: 3rem;\n    }\n  ");
+}, "\n    .LandingText-wrapper {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      margin: var(--global-margin);\n      font-family: var(--font4);\n    }\n    .arrow {\n      margin-top: 1rem;\n      width: 3rem;\n    }\n  ");
 
 /* harmony default export */ __webpack_exports__["default"] = (LandingText);
 
@@ -306,6 +306,103 @@ var style = __jsx("style", {
 }, "\n    .logo-letter {\n      color: var(--color2);\n    }\n    .logo {\n      z-index: 200;\n      font-size: 3rem;\n      color: var(--color2);\n      margin-left: var(--global-margin);\n      margin-top: 1rem;\n      position: relative;\n      width: 10rem;\n    }\n    @media (min-width: 801px) {\n      .logo {\n        font-size: 3rem;\n        margin-top: 2.3rem;\n      }\n    }\n  ");
 
 /* harmony default export */ __webpack_exports__["default"] = (Logo);
+
+/***/ }),
+
+/***/ "./components/ReleaseEntry.js":
+/*!************************************!*\
+  !*** ./components/ReleaseEntry.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/jeremie/web/33_elis/components/ReleaseEntry.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var ReleaseEntry = function ReleaseEntry() {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "ReleaseEntry-wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, __jsx("img", {
+    className: "josyara",
+    src: "/img/josy.jpg",
+    alt: "josyara",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }), __jsx("span", {
+    className: "play-button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, __jsx("img", {
+    className: "play",
+    src: "/img/play.png",
+    alt: "play",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "release-details",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, __jsx("span", {
+    className: "artist-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, "JOSYARA & IZEM"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx("span", {
+    className: "release-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "Iara Correnteza (single)"))), style);
+};
+
+var style = __jsx("style", {
+  jsx: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, "\n    .ReleaseEntry-wrapper {\n      position: relative;\n      font-family: var(--font4);\n    }\n    .josyara {\n      width: 100%;\n    }\n    .play-button {\n    }\n    .play {\n      position: absolute;\n      left: 1rem;\n      bottom: 1rem;\n      width: 5rem;\n      background-color: white;\n      padding: 0.2rem;\n    }\n    .release-details {\n      position: absolute;\n      bottom: 1rem;\n      right: 1rem;\n      text-align: right;\n    }\n    .artist-name {\n      margin-bottom: 0.3rem;\n      font-size: 1.2rem;\n    }\n    .artist-name,\n    .release-name {\n      display: inline-block;\n      background-color: white;\n      padding: 0.4rem;\n    }\n  ");
+
+/* harmony default export */ __webpack_exports__["default"] = (ReleaseEntry);
 
 /***/ }),
 
@@ -10311,9 +10408,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_LandingText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LandingText */ "./components/LandingText.js");
+/* harmony import */ var _components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ReleaseEntry */ "./components/ReleaseEntry.js");
 var _jsxFileName = "/Users/jeremie/web/33_elis/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -10321,19 +10420,25 @@ function Index() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(_components_LandingText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
+    },
+    __self: this
+  }), __jsx(_components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: this
   })), style);
@@ -10343,7 +10448,7 @@ var style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 18
   },
   __self: undefined
 }, "");

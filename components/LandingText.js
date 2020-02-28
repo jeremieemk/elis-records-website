@@ -22,9 +22,10 @@ const style = (
       flex-direction: column;
       align-items: center;
       margin: var(--global-margin);
+      font-family: var(--font4);
     }
     .arrow {
-      margin-top: 2rem;
+      margin-top: 1rem;
       width: 3rem;
     }
   `}</style>

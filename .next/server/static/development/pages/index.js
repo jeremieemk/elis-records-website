@@ -230,9 +230,10 @@ const style = __jsx("style", {
       flex-direction: column;
       align-items: center;
       margin: var(--global-margin);
+      font-family: var(--font4);
     }
     .arrow {
-      margin-top: 2rem;
+      margin-top: 1rem;
       width: 3rem;
     }
   `);
@@ -451,6 +452,135 @@ const style = __jsx("style", {
   `);
 
 /* harmony default export */ __webpack_exports__["default"] = (Logo);
+
+/***/ }),
+
+/***/ "./components/ReleaseEntry.js":
+/*!************************************!*\
+  !*** ./components/ReleaseEntry.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/jeremie/web/33_elis/components/ReleaseEntry.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ReleaseEntry = () => __jsx("div", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 2
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "ReleaseEntry-wrapper",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 3
+  },
+  __self: undefined
+}, __jsx("img", {
+  className: "josyara",
+  src: "/img/josy.jpg",
+  alt: "josyara",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 4
+  },
+  __self: undefined
+}), __jsx("span", {
+  className: "play-button",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}, __jsx("img", {
+  className: "play",
+  src: "/img/play.png",
+  alt: "play",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 6
+  },
+  __self: undefined
+})), __jsx("div", {
+  className: "release-details",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}, __jsx("span", {
+  className: "artist-name",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 9
+  },
+  __self: undefined
+}, "JOSYARA & IZEM"), __jsx("br", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 10
+  },
+  __self: undefined
+}), __jsx("span", {
+  className: "release-name",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 11
+  },
+  __self: undefined
+}, "Iara Correnteza (single)"))), style);
+
+const style = __jsx("style", {
+  jsx: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 19
+  },
+  __self: undefined
+}, `
+    .ReleaseEntry-wrapper {
+      position: relative;
+      font-family: var(--font4);
+    }
+    .josyara {
+      width: 100%;
+    }
+    .play-button {
+    }
+    .play {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      width: 5rem;
+      background-color: white;
+      padding: 0.2rem;
+    }
+    .release-details {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      text-align: right;
+    }
+    .artist-name {
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+    }
+    .artist-name,
+    .release-name {
+      display: inline-block;
+      background-color: white;
+      padding: 0.4rem;
+    }
+  `);
+
+/* harmony default export */ __webpack_exports__["default"] = (ReleaseEntry);
 
 /***/ }),
 
@@ -2370,9 +2500,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_LandingText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LandingText */ "./components/LandingText.js");
+/* harmony import */ var _components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ReleaseEntry */ "./components/ReleaseEntry.js");
 var _jsxFileName = "/Users/jeremie/web/33_elis/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2380,19 +2512,25 @@ function Index() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(_components_LandingText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
+    },
+    __self: this
+  }), __jsx(_components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: this
   })), style);
@@ -2402,7 +2540,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 18
   },
   __self: undefined
 }, ``);
