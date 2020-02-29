@@ -105,9 +105,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _PlayButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlayButton */ "./components/PlayButton.js");
+/* harmony import */ var _ProgressBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProgressBar */ "./components/ProgressBar.js");
 var _jsxFileName = "/Users/jeremie/web/33_elis/components/AudioPlayer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -116,6 +118,14 @@ function AudioPlayer() {
     0: playingStatus,
     1: setPlayingStatus
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: audioCurrentTime,
+    1: setAudioCurrentTime
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: songLength,
+    1: setSongLength
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   const audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
 
   const handlePlayButtonClick = () => {
@@ -123,14 +133,20 @@ function AudioPlayer() {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    playingStatus ? audio.current.play() : audio.current.pause();
+    setSongLength(audio.current.duration);
+
+    if (playingStatus) {
+      audio.current.play();
+      setInterval(() => setAudioCurrentTime(audio.current.currentTime), 100);
+    } else {
+      audio.current.pause();
+    }
   }, [playingStatus]);
-  console.log(playingStatus);
   return __jsx("div", {
     className: "audio-player-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 26
     },
     __self: this
   }, __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -138,7 +154,15 @@ function AudioPlayer() {
     playingStatus: playingStatus,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 27
+    },
+    __self: this
+  }), __jsx(_ProgressBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    audioCurrentTime: audioCurrentTime,
+    songLength: songLength,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
     },
     __self: this
   }), __jsx("audio", {
@@ -146,7 +170,7 @@ function AudioPlayer() {
     src: "/music/0.mp3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 35
     },
     __self: this
   }), style);
@@ -156,7 +180,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 26
+    lineNumber: 41
   },
   __self: undefined
 }, ``);
@@ -557,7 +581,7 @@ function PlayButton(props) {
       lineNumber: 4
     },
     __self: this
-  }, props.playingStatus ? __jsx("img", {
+  }, !props.playingStatus ? __jsx("img", {
     className: "play-song",
     src: "/img/play-song.png",
     alt: "play-song",
@@ -593,6 +617,78 @@ const style = __jsx("style", {
   `);
 
 /* harmony default export */ __webpack_exports__["default"] = (PlayButton);
+
+/***/ }),
+
+/***/ "./components/ProgressBar.js":
+/*!***********************************!*\
+  !*** ./components/ProgressBar.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/jeremie/web/33_elis/components/ProgressBar.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+function ProgressBar(props) {
+  console.log(props.audioCurrentTime / props.songLength);
+  let progression = props.audioCurrentTime / props.songLength * 100;
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, props.audioCurrentTime, __jsx("div", {
+    className: "progress-bar",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "range",
+    style: {
+      width: `${progression}%`
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  })), style);
+}
+
+const style = __jsx("style", {
+  jsx: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 20
+  },
+  __self: undefined
+}, `
+    .progress-bar {
+      width: 350px;
+      height: 35px;
+      border-radius: 50px;
+      border: 2px solid #666;
+      margin-bottom: 40px;
+    }
+    .range {
+      background: limegreen;
+      height: 100%;
+      border-radius: inherit;
+      transition: width 0.3s ease-in;
+    }
+  `);
+
+/* harmony default export */ __webpack_exports__["default"] = (ProgressBar);
 
 /***/ }),
 
