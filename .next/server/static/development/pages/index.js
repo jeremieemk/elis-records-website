@@ -93,6 +93,78 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/AudioPlayer.js":
+/*!***********************************!*\
+  !*** ./components/AudioPlayer.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _PlayButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PlayButton */ "./components/PlayButton.js");
+var _jsxFileName = "/Users/jeremie/web/33_elis/components/AudioPlayer.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+function AudioPlayer() {
+  const {
+    0: playingStatus,
+    1: setPlayingStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  const handlePlayButtonClick = () => {
+    setPlayingStatus(!playingStatus);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    playingStatus ? audio.current.play() : audio.current.pause();
+  }, [playingStatus]);
+  console.log(playingStatus);
+  return __jsx("div", {
+    className: "audio-player-container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    handlePlayButtonClick: handlePlayButtonClick,
+    playingStatus: playingStatus,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }), __jsx("audio", {
+    ref: audio,
+    src: "/music/0.mp3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }), style);
+}
+
+const style = __jsx("style", {
+  jsx: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 26
+  },
+  __self: undefined
+}, ``);
+
+/* harmony default export */ __webpack_exports__["default"] = (AudioPlayer);
+
+/***/ }),
+
 /***/ "./components/Header.js":
 /*!******************************!*\
   !*** ./components/Header.js ***!
@@ -452,6 +524,75 @@ const style = __jsx("style", {
   `);
 
 /* harmony default export */ __webpack_exports__["default"] = (Logo);
+
+/***/ }),
+
+/***/ "./components/PlayButton.js":
+/*!**********************************!*\
+  !*** ./components/PlayButton.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/jeremie/web/33_elis/components/PlayButton.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function PlayButton(props) {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "PlayButton",
+    onClick: props.handlePlayButtonClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, props.playingStatus ? __jsx("img", {
+    className: "play-song",
+    src: "/img/play-song.png",
+    alt: "play-song",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }) : __jsx("img", {
+    className: "pause-song",
+    src: "/img/pause.png",
+    alt: "pause-song",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  })), style);
+}
+
+const style = __jsx("style", {
+  jsx: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 17
+  },
+  __self: undefined
+}, `
+    .play-song,
+    .pause-song {
+      width: 2rem;
+    }
+  `);
+
+/* harmony default export */ __webpack_exports__["default"] = (PlayButton);
 
 /***/ }),
 
@@ -2501,9 +2642,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_LandingText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LandingText */ "./components/LandingText.js");
 /* harmony import */ var _components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ReleaseEntry */ "./components/ReleaseEntry.js");
+/* harmony import */ var _components_AudioPlayer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AudioPlayer */ "./components/AudioPlayer.js");
 var _jsxFileName = "/Users/jeremie/web/33_elis/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2512,25 +2655,31 @@ function Index() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
-  }, __jsx(_components_LandingText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_AudioPlayer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx(_components_LandingText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
     },
     __self: this
   }), __jsx(_components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   })), style);
@@ -2540,7 +2689,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 20
   },
   __self: undefined
 }, ``);
