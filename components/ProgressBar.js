@@ -10,7 +10,7 @@ function ProgressBar(props) {
   }
 
   return (
-    <div className="progress-bar" ref={progressBar} onClick={e => scrub(e)}>
+    <div className="progress-bar" ref={progressBar} onClick={scrub}>
       <div className="range" style={{ width: `${props.progression}%` }} />
       {style}
     </div>

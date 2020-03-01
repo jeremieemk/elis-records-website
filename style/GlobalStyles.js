@@ -48,15 +48,14 @@ const GlobalStyles = (
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      background: grey;
-      height: 18px;
-      width: 18px;
-      margin-top: -8px;
+      background: black;
+      height: 12px;
+      width: 12px;
+      margin-top: -5px;
       border-radius: 99px;
     }
     input[type="range"]::-webkit-slider-runnable-track {
-      width: 2rem;
-      height: 4px;
+      height: 1px;
       background: black;
     }
     input:focus,

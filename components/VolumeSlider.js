@@ -1,17 +1,17 @@
 function VolumeSlider(props) {
   const handleVolumechange = e => {
-    props.audio.volume = parseFloat(e.target.value);
+    props.audio && (props.audio.volume = parseFloat(e.target.value));
   };
   return (
     <div className="volume-slider-container">
       <input
         type="range"
-        className="volume_slider"
+        className="volume-slider"
         name="volume"
         min="0"
         max="1"
         step="0.01"
-        onChange={e => handleVolumechange(e)}
+        onChange={handleVolumechange}
       ></input>
       {style}
     </div>
@@ -22,6 +22,14 @@ const style = (
   <style jsx>{`
     .volume-slider-container {
       margin-top: 1rem;
+
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .volume-slider {
+      width: 4rem;
+      margin-right: 0.5rem;
     }
   `}</style>
 );
