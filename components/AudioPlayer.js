@@ -29,6 +29,7 @@ function AudioPlayer() {
         playingStatus={playingStatus}
       />
       <ProgressBar
+        audio={audio.current}
         audioCurrentTime={audioCurrentTime}
         songLength={songLength}
       />

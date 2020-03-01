@@ -158,6 +158,7 @@ function AudioPlayer() {
     },
     __self: this
   }), __jsx(_ProgressBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    audio: audio.current,
     audioCurrentTime: audioCurrentTime,
     songLength: songLength,
     __source: {
@@ -170,7 +171,7 @@ function AudioPlayer() {
     src: "/music/0.mp3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }), style);
@@ -180,7 +181,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 41
+    lineNumber: 42
   },
   __self: undefined
 }, ``);
@@ -637,19 +638,30 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function ProgressBar(props) {
-  console.log(props.audioCurrentTime / props.songLength);
   let progression = props.audioCurrentTime / props.songLength * 100;
+  const progressBar = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  function scrub(e) {
+    console.log();
+    console.log(progressBar.current.offsetWidth);
+    console.log(props.audio.duration);
+    const scrubTime = e.nativeEvent.offsetX / progressBar.current.offsetWidth * props.audio.duration;
+    props.audio.currentTime = scrubTime;
+  }
+
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 17
     },
     __self: this
   }, props.audioCurrentTime, __jsx("div", {
     className: "progress-bar",
+    ref: progressBar,
+    onClick: e => scrub(e),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 19
     },
     __self: this
   }, __jsx("div", {
@@ -659,7 +671,7 @@ function ProgressBar(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 20
     },
     __self: this
   })), style);
@@ -669,21 +681,18 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 20
+    lineNumber: 29
   },
   __self: undefined
 }, `
     .progress-bar {
-      width: 350px;
+      width: 80%;
       height: 35px;
-      border-radius: 50px;
       border: 2px solid #666;
-      margin-bottom: 40px;
     }
     .range {
       background: limegreen;
       height: 100%;
-      border-radius: inherit;
       transition: width 0.3s ease-in;
     }
   `);
