@@ -3,20 +3,19 @@ import PlayButton from "./PlayButton";
 import ProgressBar from "./ProgressBar";
 
 function AudioPlayer() {
+  const [progression, setProgression] = useState(0);
   const [playingStatus, setPlayingStatus] = useState(false);
-  const [audioCurrentTime, setAudioCurrentTime] = useState(0);
-  const [songLength, setSongLength] = useState(0);
-  const audio = useRef(null);
-
+  const audio = useRef();
+  const updateProgress = () => {
+    setProgression((audio.current.currentTime / audio.current.duration) * 100);
+  };
   const handlePlayButtonClick = () => {
     setPlayingStatus(!playingStatus);
   };
 
   useEffect(() => {
-    setSongLength(audio.current.duration);
     if (playingStatus) {
       audio.current.play();
-      setInterval(() => setAudioCurrentTime(audio.current.currentTime), 100);
     } else {
       audio.current.pause();
     }
@@ -28,12 +27,8 @@ function AudioPlayer() {
         handlePlayButtonClick={handlePlayButtonClick}
         playingStatus={playingStatus}
       />
-      <ProgressBar
-        audio={audio.current}
-        audioCurrentTime={audioCurrentTime}
-        songLength={songLength}
-      />
-      <audio ref={audio} src={"/music/0.mp3"} />
+      <ProgressBar audio={audio.current} progression={progression} />
+      <audio ref={audio} onTimeUpdate={updateProgress} src={"/music/0.mp3"} />
       {style}
     </div>
   );

@@ -21,32 +21,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function AudioPlayer() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      playingStatus = _useState[0],
-      setPlayingStatus = _useState[1];
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      progression = _useState[0],
+      setProgression = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      audioCurrentTime = _useState2[0],
-      setAudioCurrentTime = _useState2[1];
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      playingStatus = _useState2[0],
+      setPlayingStatus = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
-      songLength = _useState3[0],
-      setSongLength = _useState3[1];
+  var audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
 
-  var audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var updateProgress = function updateProgress() {
+    setProgression(audio.current.currentTime / audio.current.duration * 100);
+  };
 
   var handlePlayButtonClick = function handlePlayButtonClick() {
     setPlayingStatus(!playingStatus);
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    setSongLength(audio.current.duration);
-
     if (playingStatus) {
       audio.current.play();
-      setInterval(function () {
-        return setAudioCurrentTime(audio.current.currentTime);
-      }, 100);
     } else {
       audio.current.pause();
     }
@@ -55,7 +50,7 @@ function AudioPlayer() {
     className: "audio-player-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -63,24 +58,24 @@ function AudioPlayer() {
     playingStatus: playingStatus,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   }), __jsx(_ProgressBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     audio: audio.current,
-    audioCurrentTime: audioCurrentTime,
-    songLength: songLength,
+    progression: progression,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 30
     },
     __self: this
   }), __jsx("audio", {
     ref: audio,
+    onTimeUpdate: updateProgress,
     src: "/music/0.mp3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 31
     },
     __self: this
   }), style);
@@ -90,7 +85,7 @@ var style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 42
+    lineNumber: 37
   },
   __self: undefined
 }, "");
@@ -489,24 +484,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function ProgressBar(props) {
-  var progression = props.audioCurrentTime / props.songLength * 100;
   var progressBar = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
 
   function scrub(e) {
-    console.log();
-    console.log(progressBar.current.offsetWidth);
-    console.log(props.audio.duration);
     var scrubTime = e.nativeEvent.offsetX / progressBar.current.offsetWidth * props.audio.duration;
     props.audio.currentTime = scrubTime;
   }
 
+  console.log(props.progression);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 14
     },
     __self: this
-  }, props.audioCurrentTime, __jsx("div", {
+  }, __jsx("div", {
     className: "progress-bar",
     ref: progressBar,
     onClick: function onClick(e) {
@@ -514,17 +506,17 @@ function ProgressBar(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 15
     },
     __self: this
   }, __jsx("div", {
     className: "range",
     style: {
-      width: "".concat(progression, "%")
+      width: "".concat(props.progression, "%")
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 16
     },
     __self: this
   })), style);
@@ -534,7 +526,7 @@ var style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29
+    lineNumber: 24
   },
   __self: undefined
 }, "\n    .progress-bar {\n      width: 80%;\n      height: 35px;\n      border: 2px solid #666;\n    }\n    .range {\n      background: limegreen;\n      height: 100%;\n      transition: width 0.3s ease-in;\n    }\n  ");

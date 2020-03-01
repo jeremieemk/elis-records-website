@@ -1,25 +1,20 @@
 import { useRef } from "react";
 
 function ProgressBar(props) {
-  let progression = (props.audioCurrentTime / props.songLength) * 100;
   const progressBar = useRef();
   function scrub(e) {
-    console.log();
-    console.log(progressBar.current.offsetWidth);
-    console.log(props.audio.duration);
     const scrubTime =
       (e.nativeEvent.offsetX / progressBar.current.offsetWidth) *
       props.audio.duration;
     props.audio.currentTime = scrubTime;
   }
+  console.log(props.progression);
 
   return (
     <div>
-      {props.audioCurrentTime}
       <div className="progress-bar" ref={progressBar} onClick={e => scrub(e)}>
-        <div className="range" style={{ width: `${progression}%` }} />
+        <div className="range" style={{ width: `${props.progression}%` }} />
       </div>
-
       {style}
     </div>
   );

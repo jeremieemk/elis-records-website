@@ -115,29 +115,26 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function AudioPlayer() {
   const {
+    0: progression,
+    1: setProgression
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
     0: playingStatus,
     1: setPlayingStatus
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: audioCurrentTime,
-    1: setAudioCurrentTime
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
-  const {
-    0: songLength,
-    1: setSongLength
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
-  const audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  const audio = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  const updateProgress = () => {
+    setProgression(audio.current.currentTime / audio.current.duration * 100);
+  };
 
   const handlePlayButtonClick = () => {
     setPlayingStatus(!playingStatus);
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setSongLength(audio.current.duration);
-
     if (playingStatus) {
       audio.current.play();
-      setInterval(() => setAudioCurrentTime(audio.current.currentTime), 100);
     } else {
       audio.current.pause();
     }
@@ -146,7 +143,7 @@ function AudioPlayer() {
     className: "audio-player-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -154,24 +151,24 @@ function AudioPlayer() {
     playingStatus: playingStatus,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   }), __jsx(_ProgressBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     audio: audio.current,
-    audioCurrentTime: audioCurrentTime,
-    songLength: songLength,
+    progression: progression,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 30
     },
     __self: this
   }), __jsx("audio", {
     ref: audio,
+    onTimeUpdate: updateProgress,
     src: "/music/0.mp3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 31
     },
     __self: this
   }), style);
@@ -181,7 +178,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 42
+    lineNumber: 37
   },
   __self: undefined
 }, ``);
@@ -638,40 +635,37 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function ProgressBar(props) {
-  let progression = props.audioCurrentTime / props.songLength * 100;
   const progressBar = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
 
   function scrub(e) {
-    console.log();
-    console.log(progressBar.current.offsetWidth);
-    console.log(props.audio.duration);
     const scrubTime = e.nativeEvent.offsetX / progressBar.current.offsetWidth * props.audio.duration;
     props.audio.currentTime = scrubTime;
   }
 
+  console.log(props.progression);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 14
     },
     __self: this
-  }, props.audioCurrentTime, __jsx("div", {
+  }, __jsx("div", {
     className: "progress-bar",
     ref: progressBar,
     onClick: e => scrub(e),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 15
     },
     __self: this
   }, __jsx("div", {
     className: "range",
     style: {
-      width: `${progression}%`
+      width: `${props.progression}%`
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 16
     },
     __self: this
   })), style);
@@ -681,7 +675,7 @@ const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29
+    lineNumber: 24
   },
   __self: undefined
 }, `
