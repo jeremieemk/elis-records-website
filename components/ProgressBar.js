@@ -8,13 +8,10 @@ function ProgressBar(props) {
       props.audio.duration;
     props.audio.currentTime = scrubTime;
   }
-  console.log(props.progression);
 
   return (
-    <div>
-      <div className="progress-bar" ref={progressBar} onClick={e => scrub(e)}>
-        <div className="range" style={{ width: `${props.progression}%` }} />
-      </div>
+    <div className="progress-bar" ref={progressBar} onClick={e => scrub(e)}>
+      <div className="range" style={{ width: `${props.progression}%` }} />
       {style}
     </div>
   );
@@ -23,12 +20,14 @@ function ProgressBar(props) {
 const style = (
   <style jsx>{`
     .progress-bar {
-      width: 80%;
-      height: 35px;
-      border: 2px solid #666;
+      width: 100%;
+      height: 100%;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      border: 1px solid black;
     }
     .range {
-      background: limegreen;
+      background: black;
       height: 100%;
     }
   `}</style>

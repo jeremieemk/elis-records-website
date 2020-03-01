@@ -42,6 +42,28 @@ const GlobalStyles = (
       text-decoration: none;
       color: inherit;
     }
+    input[type="range"] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: grey;
+      height: 18px;
+      width: 18px;
+      margin-top: -8px;
+      border-radius: 99px;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      width: 2rem;
+      height: 4px;
+      background: black;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+    }
     @keyframes fadeIn {
       from {
         opacity: 0;
