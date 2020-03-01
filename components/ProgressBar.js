@@ -30,7 +30,6 @@ const style = (
     .range {
       background: limegreen;
       height: 100%;
-      transition: width 0.3s ease-in;
     }
   `}</style>
 );

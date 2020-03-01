@@ -529,7 +529,7 @@ var style = __jsx("style", {
     lineNumber: 24
   },
   __self: undefined
-}, "\n    .progress-bar {\n      width: 80%;\n      height: 35px;\n      border: 2px solid #666;\n    }\n    .range {\n      background: limegreen;\n      height: 100%;\n      transition: width 0.3s ease-in;\n    }\n  ");
+}, "\n    .progress-bar {\n      width: 80%;\n      height: 35px;\n      border: 2px solid #666;\n    }\n    .range {\n      background: limegreen;\n      height: 100%;\n    }\n  ");
 
 /* harmony default export */ __webpack_exports__["default"] = (ProgressBar);
 

@@ -687,7 +687,6 @@ const style = __jsx("style", {
     .range {
       background: limegreen;
       height: 100%;
-      transition: width 0.3s ease-in;
     }
   `);
 
