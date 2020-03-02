@@ -2,9 +2,9 @@ import AudioPlayer from "./AudioPlayer";
 import { useEffect, useState } from "react";
 
 function ReleaseEntry(props) {
-  const [playerDisplay, togglePlayerDisplay] = useState({ display: "none" });
-  function showPlayer() {
-    togglePlayerDisplay({ display: "block" });
+  const [playerDisplayId, setPlayerDisplayId] = useState(null);
+  function showPlayer(event) {
+    setPlayerDisplayId(event.target.getAttribute("data-tag"));
   }
   return (
     props.releases &&
@@ -18,6 +18,7 @@ function ReleaseEntry(props) {
               key={`cover${index}`}
               src={release.data.cover.url}
               alt="release-cover"
+              data-tag={index}
             />
             <div className="release-details">
               <div key={`artist${index}`} className="artist-name">
@@ -27,12 +28,14 @@ function ReleaseEntry(props) {
                 {release.data.title[0].text}
               </div>
             </div>
-            <div className="audio-player-container" style={playerDisplay}>
-              <AudioPlayer data={release.data} />
-              {Object.values(release.data.tracks[0]).map(track => (
-                <div>{track.name.slice(0, -4)}</div>
-              ))}
-            </div>
+            {parseInt(playerDisplayId) === index && (
+              <div className="audio-player-container">
+                <AudioPlayer data={release.data} />
+                {Object.values(release.data.tracks[0]).map(track => (
+                  <div>{track.name.slice(0, -4)}</div>
+                ))}
+              </div>
+            )}
           </div>
           <style jsx>{`
             .release-entry-wrapper {

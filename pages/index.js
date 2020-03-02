@@ -1,12 +1,11 @@
 import Layout from "../components/Layout";
 import LandingText from "../components/LandingText";
 import ReleaseEntry from "../components/ReleaseEntry";
-import AudioPlayer from "../components/AudioPlayer";
 import Prismic from "prismic-javascript";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Index() {
-  const [releases, setReleasesData] = React.useState(null);
+  const [releases, setReleasesData] = useState(null);
   const apiEndpoint = "https://elis-records.prismic.io/api/v2";
   const accessToken = "";
   const Client = Prismic.client(apiEndpoint, { accessToken });
