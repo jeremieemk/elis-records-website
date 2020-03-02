@@ -34,19 +34,15 @@ function AudioPlayer() {
         <audio ref={audio} onTimeUpdate={updateProgress} src={"/music/0.mp3"} />
       </div>
       <VolumeSlider audio={audio.current} />
-      {style}
+      <style jsx>{`
+        .audio-player-container {
+          display: flex;
+          width: 100%;
+          height: 2rem;
+        }
+      `}</style>
     </div>
   );
 }
-
-const style = (
-  <style jsx>{`
-    .audio-player-container {
-      display: flex;
-      width: 100%;
-      height: 2rem;
-    }
-  `}</style>
-);
 
 export default AudioPlayer;

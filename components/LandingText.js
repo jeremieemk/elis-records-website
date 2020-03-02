@@ -11,24 +11,20 @@ const LandingText = () => (
       </div>
       <img className="arrow" src="/img/scroll.png" alt="arrow" />
     </div>
-    {style}
+    <style jsx>{`
+      .LandingText-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: var(--global-margin);
+        font-family: var(--font4);
+      }
+      .arrow {
+        margin-top: 1rem;
+        width: 3rem;
+      }
+    `}</style>
   </div>
-);
-
-const style = (
-  <style jsx>{`
-    .LandingText-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: var(--global-margin);
-      font-family: var(--font4);
-    }
-    .arrow {
-      margin-top: 1rem;
-      width: 3rem;
-    }
-  `}</style>
 );
 
 export default LandingText;

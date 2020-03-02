@@ -13,25 +13,21 @@ function VolumeSlider(props) {
         step="0.01"
         onChange={handleVolumechange}
       ></input>
-      {style}
+      <style jsx>{`
+        .volume-slider-container {
+          margin-top: 1rem;
+
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .volume-slider {
+          width: 4rem;
+          margin-right: 0.5rem;
+        }
+      `}</style>
     </div>
   );
 }
-
-const style = (
-  <style jsx>{`
-    .volume-slider-container {
-      margin-top: 1rem;
-
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .volume-slider {
-      width: 4rem;
-      margin-right: 0.5rem;
-    }
-  `}</style>
-);
 
 export default VolumeSlider;

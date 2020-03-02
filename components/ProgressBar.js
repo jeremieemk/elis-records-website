@@ -12,25 +12,21 @@ function ProgressBar(props) {
   return (
     <div className="progress-bar" ref={progressBar} onClick={scrub}>
       <div className="range" style={{ width: `${props.progression}%` }} />
-      {style}
+      <style jsx>{`
+        .progress-bar {
+          width: 100%;
+          height: 100%;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+          border: 1px solid black;
+        }
+        .range {
+          background: black;
+          height: 100%;
+        }
+      `}</style>
     </div>
   );
 }
-
-const style = (
-  <style jsx>{`
-    .progress-bar {
-      width: 100%;
-      height: 100%;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-      border: 1px solid black;
-    }
-    .range {
-      background: black;
-      height: 100%;
-    }
-  `}</style>
-);
 
 export default ProgressBar;
