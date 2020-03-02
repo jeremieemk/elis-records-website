@@ -30,10 +30,10 @@ function ReleaseEntry(props) {
             </div>
             {parseInt(playerDisplayId) === index && (
               <div className="audio-player-container">
-                <AudioPlayer data={release.data} />
                 {Object.values(release.data.tracks[0]).map(track => (
                   <div>{track.name.slice(0, -4)}</div>
                 ))}
+                <AudioPlayer data={release.data} />
               </div>
             )}
           </div>
@@ -52,6 +52,12 @@ function ReleaseEntry(props) {
             .release-name {
             }
             .audio-player-container {
+              position: fixed;
+              bottom: 0;
+              background: white;
+              padding-bottom: 1rem;
+              width: 100%;
+              z-index: 2;
             }
           `}</style>
         </div>
