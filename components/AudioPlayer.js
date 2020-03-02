@@ -21,11 +21,14 @@ function AudioPlayer(props) {
       audio.current.pause();
     }
   }, [playingStatus]);
+  console.log(props.launchPlay);
 
+  // allows skipping or rewinding when clicking on the tracklist
   useEffect(() => {
+    setPlayingStatus(true);
+    audio.current.currentTime = 0;
     audio.current.play();
-    console.log("track changed");
-  }, [props.track.url]);
+  }, [props.launchPlay, props.track]);
 
   return (
     <div>
