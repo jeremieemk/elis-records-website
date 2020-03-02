@@ -5,7 +5,7 @@ import VolumeSlider from "./VolumeSlider";
 
 function AudioPlayer(props) {
   const [progression, setProgression] = useState(0);
-  const [playingStatus, setPlayingStatus] = useState(false);
+  const [playingStatus, setPlayingStatus] = useState(true);
   const audio = useRef();
   const updateProgress = () => {
     setProgression((audio.current.currentTime / audio.current.duration) * 100);
@@ -22,6 +22,11 @@ function AudioPlayer(props) {
     }
   }, [playingStatus]);
 
+  useEffect(() => {
+    audio.current.play();
+    console.log("track changed");
+  }, [props.track.url]);
+
   return (
     <div>
       <div className="audio-player-container">
@@ -31,7 +36,11 @@ function AudioPlayer(props) {
         />
         <ProgressBar audio={audio.current} progression={progression} />
 
-        <audio ref={audio} onTimeUpdate={updateProgress} src={"/music/0.mp3"} />
+        <audio
+          ref={audio}
+          onTimeUpdate={updateProgress}
+          src={props.track.url}
+        />
       </div>
       <VolumeSlider audio={audio.current} />
       <style jsx>{`

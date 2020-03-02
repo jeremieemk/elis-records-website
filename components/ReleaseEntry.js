@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 
 function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
+  const [selectedTrack, setSelectedTrack] = useState(0);
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
+  }
+  function changeTrack(event) {
+    setSelectedTrack(event.target.getAttribute("data-tag"));
   }
   return (
     props.releases &&
@@ -30,10 +34,14 @@ function ReleaseEntry(props) {
             </div>
             {parseInt(playerDisplayId) === index && (
               <div className="audio-player-container">
-                {Object.values(release.data.tracks[0]).map(track => (
-                  <div>{track.name.slice(0, -4)}</div>
+                {Object.values(release.data.tracks[0]).map((track, index) => (
+                  <div data-tag={index} onClick={changeTrack}>
+                    {track.name.slice(0, -4)}
+                  </div>
                 ))}
-                <AudioPlayer data={release.data} />
+                <AudioPlayer
+                  track={Object.values(release.data.tracks[0])[selectedTrack]}
+                />
               </div>
             )}
           </div>
@@ -55,7 +63,7 @@ function ReleaseEntry(props) {
               position: fixed;
               bottom: 0;
               background: white;
-              padding-bottom: 1rem;
+              padding: 1rem;
               width: 100%;
               z-index: 2;
             }
