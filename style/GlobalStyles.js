@@ -7,10 +7,8 @@ const GlobalStyles = (
       src: url("fonts/PxGroteskBold.ttf") format("truetype");
     }
     @font-face {
-      font-family: "Sectra";
-      src: url("fonts/Sectra.woff2") format("woff2");
-      src: url("fonts/Sectra.woff") format("woff");
-      src: url("fonts/Sectra.ttf") format("truetype");
+      font-family: "MonospaceTypewriter";
+      src: url("fonts/MonospaceTypewriter.ttf") format("truetype");
     }
     @font-face {
       font-family: "WorkSans-Bold";
@@ -25,10 +23,11 @@ const GlobalStyles = (
 
     :root {
       --global-margin: 2rem;
+      --standard-font-size: 0.7rem;
       --desktop-padding: 25%;
       --color1: #f7f7f7;
       --color2: #f74d2c;
-      --font1: "Sectra";
+      --font1: "MonospaceTypewriter";
       --font2: "PxGroteskBold";
       --font3: "WorkSans-Bold";
       --font4: "WorkSans-Regular";

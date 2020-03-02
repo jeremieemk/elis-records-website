@@ -38,7 +38,7 @@ const Layout = props => (
         width: 100%;
         position: absolute;
         bottom: -2;
-        margin-bottom: 1rem;
+        margin-bottom: 10rem;
         margin-top: 2rem;
         text-align: center;
         color: black;
