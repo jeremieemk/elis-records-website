@@ -1,6 +1,11 @@
 import AudioPlayer from "./AudioPlayer";
+import { useEffect, useState } from "react";
 
 function ReleaseEntry(props) {
+  const [playerDisplay, togglePlayerDisplay] = useState({ display: "none" });
+  function showPlayer() {
+    togglePlayerDisplay({ display: "block" });
+  }
   return (
     props.releases &&
     props.releases.map(function(release, index) {
@@ -9,6 +14,7 @@ function ReleaseEntry(props) {
           <div className="release-entry-wrapper">
             <img
               className="release-cover"
+              onClick={showPlayer}
               key={`cover${index}`}
               src={release.data.cover.url}
               alt="release-cover"
@@ -21,7 +27,7 @@ function ReleaseEntry(props) {
                 {release.data.title[0].text}
               </div>
             </div>
-            <div>
+            <div className="audio-player-container" style={playerDisplay}>
               <AudioPlayer data={release.data} />
               {Object.values(release.data.tracks[0]).map(track => (
                 <div>{track.name.slice(0, -4)}</div>
@@ -41,6 +47,8 @@ function ReleaseEntry(props) {
             }
             .artist-name,
             .release-name {
+            }
+            .audio-player-container {
             }
           `}</style>
         </div>
