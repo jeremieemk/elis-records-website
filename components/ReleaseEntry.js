@@ -13,6 +13,7 @@ function ReleaseEntry(props) {
   return (
     props.releases &&
     props.releases.map(function(release, index) {
+      let tracklist = Object.values(release.data.tracks[0]);
       return (
         <div>
           <div className="release-entry-wrapper">
@@ -34,14 +35,12 @@ function ReleaseEntry(props) {
             </div>
             {parseInt(playerDisplayId) === index && (
               <div className="audio-player-container">
-                {Object.values(release.data.tracks[0]).map((track, index) => (
+                {tracklist.map((track, index) => (
                   <div data-tag={index} onClick={changeTrack}>
                     {track.name.slice(0, -4)}
                   </div>
                 ))}
-                <AudioPlayer
-                  track={Object.values(release.data.tracks[0])[selectedTrack]}
-                />
+                <AudioPlayer track={tracklist[selectedTrack]} />
               </div>
             )}
           </div>
