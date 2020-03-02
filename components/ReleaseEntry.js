@@ -1,5 +1,6 @@
 import AudioPlayer from "./AudioPlayer";
 import { useEffect, useState } from "react";
+import ClosingCross from "./ClosingCross";
 
 function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
@@ -12,6 +13,10 @@ function ReleaseEntry(props) {
     setSelectedTrack(event.target.getAttribute("data-tag"));
     setLaunchPlay(true);
   }
+  function stopMusic() {
+    setLaunchPlay(false);
+  }
+
   return (
     props.releases &&
     props.releases.map(function(release, index) {
@@ -28,11 +33,21 @@ function ReleaseEntry(props) {
               data-tag={index}
             />
             <div className="release-details">
-              <div key={`artist${index}`} className="artist-name">
+              <div
+                key={`artist${index}`}
+                className="artist-name"
+                onClick={showPlayer}
+                data-tag={index}
+              >
                 {release.data.artist[0].text}
               </div>
 
-              <div key={`title${index}`} className="release-name">
+              <div
+                key={`title${index}`}
+                className="release-name"
+                onClick={showPlayer}
+                data-tag={index}
+              >
                 <img
                   className="mini-play"
                   src="/img/play-song.png"
@@ -46,6 +61,12 @@ function ReleaseEntry(props) {
 
             {parseInt(playerDisplayId) === index && (
               <div className="audio-player-container">
+                <img
+                  className="cross"
+                  src="/img/cross.png"
+                  alt="cross"
+                  onClick={stopMusic}
+                />
                 <div className="tracklist-container">
                   {tracklist.map((track, index) => (
                     <div
@@ -73,7 +94,12 @@ function ReleaseEntry(props) {
               text-transform: uppercase;
             }
             .release-cover {
+              cursor: pointer;
               width: 100%;
+              transition: transform 0.5s;
+            }
+            .release-cover:hover {
+              transform: scale(1.005);
             }
 
             .release-details {
@@ -83,6 +109,13 @@ function ReleaseEntry(props) {
               padding-right: 0.5rem;
               text-align: center;
               letter-spacing: 0.05rem;
+              transition: opacity 0.3s;
+              transition: transform 0.5s;
+              cursor: pointer;
+            }
+            .release-details:hover {
+              opacity: 0.7;
+              transform: scale(0.97);
             }
             .mini-play {
               width: 0.5rem;
@@ -94,6 +127,7 @@ function ReleaseEntry(props) {
               padding-bottom: 0.3rem;
             }
             .audio-player-container {
+              cursor: pointer;
               position: fixed;
               bottom: 0;
               left: 0;
@@ -102,6 +136,17 @@ function ReleaseEntry(props) {
               z-index: 2;
               padding-bottom: 1rem;
               padding-top: 1rem;
+            }
+            .cross {
+              width: 0.7rem;
+              position: absolute;
+              right: 0.3rem;
+              top: 0.3rem;
+              transition: transform 0.3s;
+            }
+            .cross:hover {
+              transform: scale(1.2);
+              opacity: 0.7;
             }
             .tracklist-container {
               padding-bottom: 0.5rem;

@@ -16,6 +16,7 @@ function Index() {
         { orderings: "[my.release.release-date desc]" }
       );
       if (response) {
+        console.log(response);
         setReleasesData(response.results);
       }
     };
@@ -23,11 +24,19 @@ function Index() {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       <Layout>
         <LandingText />
         <ReleaseEntry releases={releases} />
       </Layout>
+      <style jsx>{`
+        @media (min-width: 801px) {
+          .main-container {
+            padding-left: 20%;
+            padding-right: 20%;
+          }
+        }
+      `}</style>
     </div>
   );
 }

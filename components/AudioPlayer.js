@@ -21,15 +21,14 @@ function AudioPlayer(props) {
       audio.current.pause();
     }
   }, [playingStatus]);
-  console.log(props.launchPlay);
 
-  // allows skipping or rewinding when clicking on the tracklist
+  // allows changing track or rewinding when clicking on the tracklist
   useEffect(() => {
     setPlayingStatus(true);
     audio.current.currentTime = 0;
     audio.current.play();
+    // !props.launchPlay && audio.current.pause();
   }, [props.launchPlay, props.track]);
-
   return (
     <div>
       <div className="audio-player-container">
@@ -51,6 +50,7 @@ function AudioPlayer(props) {
           display: flex;
           width: 100%;
           height: 2rem;
+        }
         }
       `}</style>
     </div>
