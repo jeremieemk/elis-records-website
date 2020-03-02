@@ -3,7 +3,7 @@ import PlayButton from "./PlayButton";
 import ProgressBar from "./ProgressBar";
 import VolumeSlider from "./VolumeSlider";
 
-function AudioPlayer() {
+function AudioPlayer(props) {
   const [progression, setProgression] = useState(0);
   const [playingStatus, setPlayingStatus] = useState(false);
   const audio = useRef();
