@@ -725,86 +725,68 @@ var _jsxFileName = "/Users/jeremie/web/33_elis/components/ReleaseEntry.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const ReleaseEntry = () => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 2
-  },
-  __self: undefined
-}, __jsx("div", {
-  className: "ReleaseEntry-wrapper",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 3
-  },
-  __self: undefined
-}, __jsx("img", {
-  className: "josyara",
-  src: "/img/josy.jpg",
-  alt: "josyara",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 4
-  },
-  __self: undefined
-}), __jsx("span", {
-  className: "play-button",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx("img", {
-  className: "play",
-  src: "/img/play.png",
-  alt: "play",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-})), __jsx("div", {
-  className: "release-details",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, __jsx("span", {
-  className: "artist-name",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}, "JOSYARA & IZEM"), __jsx("br", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}), __jsx("span", {
-  className: "release-name",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}, "Iara Correnteza (single)"))), style);
+function ReleaseEntry(props) {
+  return props.releases && props.releases.map(release => __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "release-entry-wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx("img", {
+    className: "release-cover",
+    src: release.data.cover.url,
+    alt: "release-cover",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }), __jsx("div", {
+    className: "release-details",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, __jsx("div", {
+    key: release.id,
+    className: "artist-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, release.data.artist[0].text), __jsx("div", {
+    key: release.id,
+    className: "release-name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, release.data.title[0].text))), style));
+}
 
 const style = __jsx("style", {
   jsx: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 28
   },
   __self: undefined
 }, `
-    .ReleaseEntry-wrapper {
+    .release-entry-wrapper {
       position: relative;
       font-family: var(--font4);
     }
-    .josyara {
+    .release-cover {
       width: 100%;
     }
     .play-button {
@@ -2839,6 +2821,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LandingText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LandingText */ "./components/LandingText.js");
 /* harmony import */ var _components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ReleaseEntry */ "./components/ReleaseEntry.js");
 /* harmony import */ var _components_AudioPlayer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AudioPlayer */ "./components/AudioPlayer.js");
+/* harmony import */ var prismic_javascript__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prismic-javascript */ "prismic-javascript");
+/* harmony import */ var prismic_javascript__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prismic_javascript__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/jeremie/web/33_elis/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2847,48 +2831,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 function Index() {
+  const [releases, setReleasesData] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null);
+  const apiEndpoint = "https://elis-records.prismic.io/api/v2";
+  const accessToken = "";
+  const Client = prismic_javascript__WEBPACK_IMPORTED_MODULE_5___default.a.client(apiEndpoint, {
+    accessToken
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    const fetchData = async () => {
+      const response = await Client.query(prismic_javascript__WEBPACK_IMPORTED_MODULE_5___default.a.Predicates.at("document.type", "release"), {
+        orderings: "[my.release.release-date desc]"
+      });
+
+      if (response) {
+        console.log(response);
+        setReleasesData(response.results);
+      }
+    };
+
+    fetchData();
+  }, []);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 28
     },
     __self: this
   }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 29
     },
     __self: this
   }, __jsx(_components_AudioPlayer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 30
     },
     __self: this
   }), __jsx(_components_LandingText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 31
     },
     __self: this
   }), __jsx(_components_ReleaseEntry__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    releases: releases,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 32
     },
     __self: this
-  })), style);
+  })));
 }
-
-const style = __jsx("style", {
-  jsx: true,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 20
-  },
-  __self: undefined
-}, ``);
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -3061,6 +3059,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "prismic-javascript":
+/*!*************************************!*\
+  !*** external "prismic-javascript" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prismic-javascript");
 
 /***/ }),
 

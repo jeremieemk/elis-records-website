@@ -1,27 +1,36 @@
-const ReleaseEntry = () => (
-  <div>
-    <div className="ReleaseEntry-wrapper">
-      <img className="josyara" src="/img/josy.jpg" alt="josyara" />
-      <span className="play-button">
-        <img className="play" src="/img/play.png" alt="play" />
-      </span>
-      <div className="release-details">
-        <span className="artist-name">JOSYARA & IZEM</span>
-        <br></br>
-        <span className="release-name">Iara Correnteza (single)</span>
+function ReleaseEntry(props) {
+  return (
+    props.releases &&
+    props.releases.map(release => (
+      <div>
+        <div className="release-entry-wrapper">
+          <img
+            className="release-cover"
+            src={release.data.cover.url}
+            alt="release-cover"
+          />
+          <div className="release-details">
+            <div key={release.id} className="artist-name">
+              {release.data.artist[0].text}
+            </div>
+            <div key={release.id} className="release-name">
+              {release.data.title[0].text}
+            </div>
+          </div>
+        </div>
+        {style}
       </div>
-    </div>
-    {style}
-  </div>
-);
+    ))
+  );
+}
 
 const style = (
   <style jsx>{`
-    .ReleaseEntry-wrapper {
+    .release-entry-wrapper {
       position: relative;
       font-family: var(--font4);
     }
-    .josyara {
+    .release-cover {
       width: 100%;
     }
     .play-button {
