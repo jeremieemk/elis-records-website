@@ -16,8 +16,9 @@ npm run dev
 
 ### Built With
 
-- [Next.Js](https://github.com/zeit/next.js/)
+[Next.Js](https://github.com/zeit/next.js/)
+[Prismic](https://prismic.io/)
 
 ### Acknowledgments
 
-- I took inspiration from the [Young Turks' label site](https://theyoungturks.co.uk/)
+I took inspiration from the [Young Turks' label site](https://theyoungturks.co.uk/)
