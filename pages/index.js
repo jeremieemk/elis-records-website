@@ -16,7 +16,6 @@ function Index() {
         { orderings: "[my.release.release-date desc]" }
       );
       if (response) {
-        console.log(response);
         setReleasesData(response.results);
       }
     };
