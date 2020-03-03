@@ -16,6 +16,7 @@ function TracklistAndPlayer(props) {
   function handlePlayButtonClick() {
     setPlayingStatus(!playingStatus);
   }
+  console.log(selectedTrack);
 
   return (
     <div className="audio-player-container">
@@ -27,7 +28,14 @@ function TracklistAndPlayer(props) {
       />
       <div className="tracklist-container">
         {props.tracklist.map((track, index) => (
-          <div className="tracklist-item" data-tag={index} onClick={startTrack}>
+          <div
+            className="tracklist-item"
+            data-tag={index}
+            onClick={startTrack}
+            style={{
+              opacity: parseInt(selectedTrack) === index && 1
+            }}
+          >
             {track.name.slice(0, -4)}
           </div>
         ))}
@@ -69,6 +77,7 @@ function TracklistAndPlayer(props) {
         }
         .tracklist-item {
           padding-bottom: 0.5rem;
+          opacity: 0.5;
         }
       `}</style>
     </div>
