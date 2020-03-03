@@ -1,6 +1,4 @@
-# Elis Records website (includes music player)
-
-### How to
+# Elis Records website (includes custom music player)
 
 install dependencies
 
@@ -14,11 +12,6 @@ start development server
 npm run dev
 ```
 
-### Built With
-
-[Next.Js](https://github.com/zeit/next.js/)
-[Prismic](https://prismic.io/)
-
-### Acknowledgments
+Built with [Next.Js](https://github.com/zeit/next.js/) and [Prismic](https://prismic.io/)
 
 I took inspiration from the [Young Turks' label site](https://theyoungturks.co.uk/)
