@@ -15,6 +15,7 @@ function VolumeSlider(props) {
       ></input>
       <style jsx>{`
         .volume-slider-container {
+          opacity: 0.8;
           margin-top: 1rem;
 
           width: 100%;
@@ -23,7 +24,7 @@ function VolumeSlider(props) {
         }
         .volume-slider {
           width: 4rem;
-          margin-right: 0.5rem;
+          margin-right: 1rem;
         }
       `}</style>
     </div>

@@ -16,7 +16,6 @@ function TracklistAndPlayer(props) {
   function handlePlayButtonClick() {
     setPlayingStatus(!playingStatus);
   }
-  console.log(selectedTrack);
 
   return (
     <div className="audio-player-container">
@@ -36,7 +35,7 @@ function TracklistAndPlayer(props) {
               opacity: parseInt(selectedTrack) === index && 1
             }}
           >
-            {track.name.slice(0, -4)}
+            {track.name && track.name.slice(0, -4)}
           </div>
         ))}
       </div>
@@ -58,17 +57,19 @@ function TracklistAndPlayer(props) {
           z-index: 2;
           padding-bottom: 1rem;
           padding-top: 1rem;
+          border-top: 0.2px solid black;
         }
         .cross {
-          width: 0.7rem;
+          width: 0.5rem;
           position: absolute;
           right: 0.3rem;
           top: 0.3rem;
           transition: transform 0.3s;
+          opacity: 0.7;
         }
         .cross:hover {
           transform: scale(1.2);
-          opacity: 0.7;
+          opacity: 1;
         }
         .tracklist-container {
           padding-bottom: 0.5rem;

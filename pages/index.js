@@ -32,8 +32,8 @@ function Index() {
       <style jsx>{`
         @media (min-width: 801px) {
           .main-container {
-            padding-left: 20%;
-            padding-right: 20%;
+            padding-left: 30%;
+            padding-right: 30%;
           }
         }
       `}</style>

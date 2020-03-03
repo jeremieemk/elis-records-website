@@ -3,10 +3,12 @@ import { useRef } from "react";
 function ProgressBar(props) {
   const progressBar = useRef();
   function scrub(e) {
-    const scrubTime =
-      (e.nativeEvent.offsetX / progressBar.current.offsetWidth) *
-      props.audio.duration;
-    props.audio.currentTime = scrubTime;
+    if (props.audio) {
+      const scrubTime =
+        (e.nativeEvent.offsetX / progressBar.current.offsetWidth) *
+        props.audio.duration;
+      props.audio.currentTime = scrubTime;
+    }
   }
 
   return (
@@ -17,7 +19,7 @@ function ProgressBar(props) {
           width: 100%;
           height: 100%;
           margin-left: 0.5rem;
-          margin-right: 0.5rem;
+          margin-right: 1rem;
           border: 1px solid black;
           transition: opacity 0.6s;
         }

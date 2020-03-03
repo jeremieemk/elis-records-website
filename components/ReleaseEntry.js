@@ -12,6 +12,7 @@ function ReleaseEntry(props) {
     props.releases &&
     props.releases.map(function(release, index) {
       let tracklist = Object.values(release.data.tracks[0]);
+      console.log(tracklist);
       return (
         <div>
           <div className="release-entry-wrapper">

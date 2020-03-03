@@ -11,7 +11,7 @@ function PlayButton(props) {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-left: 0.5rem;
+          margin-left: 1rem;
         }
         .play-song,
         .pause-song {

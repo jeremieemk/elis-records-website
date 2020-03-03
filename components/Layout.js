@@ -18,7 +18,7 @@ const Layout = props => (
           (Built with react.js and open-sourced on{" "}
           <a
             className="github-link"
-            href="https://github.com/jeremieemk/overdub/"
+            href="https://github.com/jeremieemk/elis-records-website"
             target="_blank"
           >
             GitHub
@@ -42,8 +42,10 @@ const Layout = props => (
         margin-top: 2rem;
         text-align: center;
         color: black;
-        font-family: var(--font4);
-        font-size: 0.8rem;
+        font-family: var(--font1);
+        font-size: var(--standard-font-size);
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
       }
       .github-link {
         color: var(--color2);
