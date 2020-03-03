@@ -1,6 +1,4 @@
-# Project Title
-
-Elis Records website (includes music player)
+# Elis Records website (includes music player)
 
 ### How to
 
@@ -16,10 +14,10 @@ start development server
 npm run dev
 ```
 
-## Built With
+### Built With
 
 - [Next.Js](https://github.com/zeit/next.js/)
 
-## Acknowledgments
+### Acknowledgments
 
 - I took inspiration from the [Young Turks' label site](https://theyoungturks.co.uk/)
