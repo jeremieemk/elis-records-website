@@ -19,6 +19,10 @@ function ProgressBar(props) {
           margin-left: 0.5rem;
           margin-right: 0.5rem;
           border: 1px solid black;
+          transition: opacity 0.6s;
+        }
+        .progress-bar:hover {
+          opacity: 0.8;
         }
         .range {
           background: black;

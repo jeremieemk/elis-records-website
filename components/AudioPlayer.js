@@ -5,36 +5,31 @@ import VolumeSlider from "./VolumeSlider";
 
 function AudioPlayer(props) {
   const [progression, setProgression] = useState(0);
-  const [playingStatus, setPlayingStatus] = useState(true);
   const audio = useRef();
   const updateProgress = () => {
     setProgression((audio.current.currentTime / audio.current.duration) * 100);
   };
-  const handlePlayButtonClick = () => {
-    setPlayingStatus(!playingStatus);
-  };
-
   useEffect(() => {
-    if (playingStatus) {
+    if (props.playingStatus) {
       audio.current.play();
     } else {
       audio.current.pause();
     }
-  }, [playingStatus]);
+  }, [props.playingStatus]);
 
-  // allows changing track or rewinding when clicking on the tracklist
+  // allows launchinng track when clicking on the tracklist
   useEffect(() => {
-    setPlayingStatus(true);
+    props.setPlayingStatus(true);
     audio.current.currentTime = 0;
     audio.current.play();
-    // !props.launchPlay && audio.current.pause();
   }, [props.launchPlay, props.track]);
+
   return (
     <div>
       <div className="audio-player-container">
         <PlayButton
-          handlePlayButtonClick={handlePlayButtonClick}
-          playingStatus={playingStatus}
+          handlePlayButtonClick={props.handlePlayButtonClick}
+          playingStatus={props.playingStatus}
         />
         <ProgressBar audio={audio.current} progression={progression} />
 
