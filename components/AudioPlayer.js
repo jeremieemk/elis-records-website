@@ -6,18 +6,13 @@ import VolumeSlider from "./VolumeSlider";
 function AudioPlayer(props) {
   const [progression, setProgression] = useState(0);
   const audio = useRef();
-  const updateProgress = () => {
+  const updateProgress = () =>
     setProgression((audio.current.currentTime / audio.current.duration) * 100);
-  };
   useEffect(() => {
-    if (props.playingStatus) {
-      audio.current.play();
-    } else {
-      audio.current.pause();
-    }
+    props.playingStatus ? audio.current.play() : audio.current.pause();
   }, [props.playingStatus]);
 
-  // allows launchinng track when clicking on the tracklist
+  // allows launching track when clicking on the tracklist
   useEffect(() => {
     props.setPlayingStatus(true);
     audio.current.currentTime = 0;

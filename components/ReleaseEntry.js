@@ -7,6 +7,14 @@ function ReleaseEntry(props) {
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
   }
+  function renderSection(section) {
+    console.log(section);
+    return (
+      <div className="section">
+        {section[0] && section.map(paragraph => <p>{paragraph.text}</p>)}
+      </div>
+    );
+  }
 
   return (
     props.releases &&
@@ -47,6 +55,20 @@ function ReleaseEntry(props) {
                   data-tag={index}
                 />
                 {release.data.title[0].text}
+              </div>
+            </div>
+
+            <div className="more-info-about-release">
+              <div className="about-release">
+                {renderSection(release.data.about)}
+              </div>
+              <div className="more-info-section-title">// CREDITS</div>
+              <div className="credits">
+                {renderSection(release.data.credits)}
+              </div>
+              <div className="more-info-section-title">// TRACKLIST</div>
+              <div className="tracklist-details">
+                {renderSection(release.data.tracklist)}
               </div>
             </div>
 
@@ -97,6 +119,13 @@ function ReleaseEntry(props) {
             .release-name {
               padding-top: 0.5rem;
               padding-bottom: 0.3rem;
+            }
+            .more-info-about-release {
+              text-transform: none;
+            }
+            .more-info-section-title {
+              margin-bottom: 1rem;
+              margin-top: 1rem;
             }
           `}</style>
         </div>

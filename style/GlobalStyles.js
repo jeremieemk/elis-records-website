@@ -41,6 +41,10 @@ const GlobalStyles = (
       text-decoration: none;
       color: inherit;
     }
+    p {
+      margin-block-start: 0.4rem;
+      margin-block-end: 0.4rem;
+    }
     input[type="range"] {
       -webkit-appearance: none;
       background: transparent;
