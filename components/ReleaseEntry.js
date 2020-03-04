@@ -58,25 +58,30 @@ function ReleaseEntry(props) {
               </div>
             </div>
 
-            <div className="more-info-about-release">
-              <div className="about-release">
-                {renderSection(release.data.about)}
-              </div>
-              <div className="more-info-section-title">// CREDITS</div>
-              <div className="credits">
-                {renderSection(release.data.credits)}
-              </div>
-              <div className="more-info-section-title">// TRACKLIST</div>
-              <div className="tracklist-details">
-                {renderSection(release.data.tracklist)}
-              </div>
-            </div>
-
             {parseInt(playerDisplayId) === index && (
-              <TracklistAndPlayer
-                tracklist={tracklist}
-                setPlayerDisplayId={setPlayerDisplayId}
-              />
+              <div>
+                <div className="more-info-about-release">
+                  <img
+                    className="close-more-info-cross"
+                    src="/img/cross.png"
+                    alt="cross"
+                  />
+                  <div className="tracklist-details">
+                    {renderSection(release.data.tracklist)}
+                  </div>
+                  <div className="about-release">
+                    {renderSection(release.data.about)}
+                  </div>
+
+                  <div className="credits">
+                    {renderSection(release.data.credits)}
+                  </div>
+                </div>
+                <TracklistAndPlayer
+                  tracklist={tracklist}
+                  setPlayerDisplayId={setPlayerDisplayId}
+                />
+              </div>
             )}
           </div>
           <style jsx>{`
@@ -86,6 +91,7 @@ function ReleaseEntry(props) {
               font-family: var(--font1);
               font-size: var(--standard-font-size);
               text-transform: uppercase;
+              
             }
             .release-cover {
               cursor: pointer;
@@ -120,12 +126,34 @@ function ReleaseEntry(props) {
               padding-top: 0.5rem;
               padding-bottom: 0.3rem;
             }
+            .tracklist-details {
+              margin-bottom: 2rem;
+            }
+            .close-more-info-cross {
+          width: 0.6rem;
+          position: absolute;
+          right: 0;
+          top: 0;
+          transition: transform 0.3s;
+          opacity: 0.7;
+        }
+        .close-more-info-cross:hover {
+          width: 0.7rem;;
+          opacity: 1;
+        }
+
+            }
             .more-info-about-release {
               text-transform: none;
+              margin-bottom: 2rem;
+              position:relative;
             }
             .more-info-section-title {
               margin-bottom: 1rem;
               margin-top: 1rem;
+            }
+            .about-release {
+              margin-bottom: 2rem;
             }
           `}</style>
         </div>
