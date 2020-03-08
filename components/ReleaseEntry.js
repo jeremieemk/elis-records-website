@@ -3,17 +3,21 @@ import TracklistAndPlayer from "./TracklistAndPlayer";
 
 function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
+  const [showMoreDetails, setShowMoreDetails] = useState(true);
 
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
   }
   function renderSection(section) {
-    console.log(section);
     return (
       <div className="section">
         {section[0] && section.map(paragraph => <p>{paragraph.text}</p>)}
       </div>
     );
+  }
+  function hideMoreDetails() {
+    console.log("hide more details");
+    setShowMoreDetails(false);
   }
 
   return (
@@ -23,60 +27,60 @@ function ReleaseEntry(props) {
       return (
         <div>
           <div className="release-entry-wrapper">
-            <img
-              className="release-cover"
-              onClick={showPlayer}
-              key={`cover${index}`}
-              src={release.data.cover.url}
-              alt="release-cover"
-              data-tag={index}
-            />
-            <div className="release-details">
-              <div
-                key={`artist${index}`}
-                className="artist-name"
-                onClick={showPlayer}
+            <div onClick={showPlayer}>
+              <img
+                className="release-cover"
+                key={`cover${index}`}
+                src={release.data.cover.url}
+                alt="release-cover"
                 data-tag={index}
-              >
-                {release.data.artist[0].text}
-              </div>
-
-              <div
-                key={`title${index}`}
-                className="release-name"
-                onClick={showPlayer}
-                data-tag={index}
-              >
-                <img
-                  className="mini-play"
-                  src="/img/play-song.png"
-                  alt="mini-play"
-                  onClick={showPlayer}
+              />
+              <div className="release-details">
+                <div
+                  key={`artist${index}`}
+                  className="artist-name"
                   data-tag={index}
-                />
-                {release.data.title[0].text}
+                >
+                  {release.data.artist[0].text}
+                </div>
+
+                <div
+                  key={`title${index}`}
+                  className="release-name"
+                  data-tag={index}
+                >
+                  <img
+                    className="mini-play"
+                    src="/img/play-song.png"
+                    alt="mini-play"
+                    data-tag={index}
+                  />
+                  {release.data.title[0].text}
+                </div>
               </div>
             </div>
-
-            {parseInt(playerDisplayId) === index && (
+            {parseInt(playerDisplayId) === index && showMoreDetails && (
               <div>
-                <div className="more-info-about-release">
-                  <img
-                    className="close-more-info-cross"
-                    src="/img/cross.png"
-                    alt="cross"
-                  />
-                  <div className="tracklist-details">
-                    {renderSection(release.data.tracklist)}
-                  </div>
-                  <div className="about-release">
-                    {renderSection(release.data.about)}
-                  </div>
+                {
+                  <div className="more-info-about-release">
+                    <img
+                      className="close-more-info-cross"
+                      src="/img/cross.png"
+                      alt="cross"
+                      onCLick={hideMoreDetails}
+                    />
+                    <div className="tracklist-details">
+                      {renderSection(release.data.tracklist)}
+                    </div>
+                    <div className="about-release">
+                      {renderSection(release.data.about)}
+                    </div>
 
-                  <div className="credits">
-                    {renderSection(release.data.credits)}
+                    <div className="credits">
+                      {renderSection(release.data.credits)}
+                    </div>
                   </div>
-                </div>
+                }
                 <TracklistAndPlayer
                   tracklist={tracklist}
                   setPlayerDisplayId={setPlayerDisplayId}
@@ -91,7 +95,6 @@ function ReleaseEntry(props) {
               font-family: var(--font1);
               font-size: var(--standard-font-size);
               text-transform: uppercase;
-              
             }
             .release-cover {
               cursor: pointer;
@@ -130,23 +133,22 @@ function ReleaseEntry(props) {
               margin-bottom: 2rem;
             }
             .close-more-info-cross {
-          width: 0.6rem;
-          position: absolute;
-          right: 0;
-          top: 0;
-          transition: transform 0.3s;
-          opacity: 0.7;
-        }
-        .close-more-info-cross:hover {
-          width: 0.7rem;;
-          opacity: 1;
-        }
-
+              width: 0.6rem;
+              position: absolute;
+              right: 0;
+              top: 0;
+              transition: transform 0.3s;
+              opacity: 0.7;
+              cursor: pointer;
+            }
+            .close-more-info-cross:hover {
+              width: 0.7rem;
+              opacity: 1;
             }
             .more-info-about-release {
               text-transform: none;
               margin-bottom: 2rem;
-              position:relative;
+              position: relative;
             }
             .more-info-section-title {
               margin-bottom: 1rem;
