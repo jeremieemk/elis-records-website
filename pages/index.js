@@ -3,6 +3,7 @@ import LandingText from "../components/LandingText";
 import ReleaseEntry from "../components/ReleaseEntry";
 import Prismic from "prismic-javascript";
 import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 function Index() {
   const [releases, setReleasesData] = useState(null);
@@ -25,6 +26,7 @@ function Index() {
   return (
     <div className="main-container">
       <Layout>
+        <Loader />
         <LandingText />
         <ReleaseEntry releases={releases} />
       </Layout>
