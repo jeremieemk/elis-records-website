@@ -15,17 +15,6 @@ const Header = () => (
         padding-top: 2rem;
         width: auto;
         height: 5rem;
-        animation: fadeIn 1s;
-        animation-fill-mode: forwards;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
       }
     `}</style>
   </div>

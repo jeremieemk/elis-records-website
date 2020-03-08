@@ -104,21 +104,11 @@ function ReleaseEntry(props) {
               font-size: var(--standard-font-size);
               text-transform: uppercase;
             }
-            @keyframes fadeIn {
-              from {
-                opacity: 0;
-              }
 
-              to {
-                opacity: 1;
-              }
-            }
             .release-cover {
               cursor: pointer;
               width: 100%;
               transition: transform 0.5s;
-              animation: fadeIn 1s;
-              animation-fill-mode: forwards;
             }
             .release-cover:hover {
               transform: scale(1.005);

@@ -28,14 +28,30 @@ function Index() {
   return (
     <div className="main-container">
       {dataIsLoaded ? (
-        <Layout>
-          <LandingText />
-          <ReleaseEntry releases={releases} />
-        </Layout>
+        <div className="loaded-site-container">
+          <Layout>
+            <LandingText />
+            <ReleaseEntry releases={releases} />
+          </Layout>
+        </div>
       ) : (
         <Loader />
       )}
       <style jsx>{`
+        .loaded-site-container {
+          animation: fadeIn 1s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+
         @media (min-width: 801px) {
           .main-container {
             padding-left: 25%;
