@@ -9,11 +9,12 @@ const Header = () => (
       .header-container {
         display: flex;
         justify-content: center;
+        width: 100%;
       }
       .elis-logo {
         padding-top: 2rem;
-        width: 10rem;
-        height: auto;
+        width: auto;
+        height: 5rem;
         animation: fadeIn 1s;
         animation-fill-mode: forwards;
       }

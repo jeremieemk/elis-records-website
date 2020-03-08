@@ -67,15 +67,6 @@ const GlobalStyles = (
     select:focus {
       outline: none;
     }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
 
     @media (min-width: 801px) {
       p {
