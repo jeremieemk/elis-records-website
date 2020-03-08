@@ -23,7 +23,8 @@ const GlobalStyles = (
 
     :root {
       --global-margin: 2rem;
-      --standard-font-size: 0.7rem;
+      --standard-font-size: 0.75rem;
+      --desktop-font-size: 0.9rem;
       --desktop-padding: 25%;
       --color1: #f7f7f7;
       --color2: #f74d2c;
@@ -73,6 +74,13 @@ const GlobalStyles = (
 
       to {
         opacity: 1;
+      }
+    }
+
+    @media (min-width: 801px) {
+      p {
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
       }
     }
   `}</style>

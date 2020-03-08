@@ -24,10 +24,29 @@ const LandingText = () => (
         letter-spacing: 0.05rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+        animation: fadeIn 1s;
+        animation-fill-mode: forwards;
       }
+
       .arrow {
         margin-top: 1rem;
         width: 3rem;
+      }
+      @media (min-width: 801px) {
+        .LandingText-wrapper {
+          font-size: var(--desktop-font-size);
+          line-height: 1.4rem;
+          letter-spacing: 0.07rem;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
     `}</style>
   </div>

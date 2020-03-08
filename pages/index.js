@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 
 function Index() {
   const [releases, setReleasesData] = useState(null);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
   const apiEndpoint = "https://elis-records.prismic.io/api/v2";
   const accessToken = "";
   const Client = Prismic.client(apiEndpoint, { accessToken });
@@ -18,6 +19,7 @@ function Index() {
       );
       if (response) {
         setReleasesData(response.results);
+        setDataIsLoaded(true);
       }
     };
     fetchData();
@@ -25,11 +27,14 @@ function Index() {
 
   return (
     <div className="main-container">
-      <Layout>
+      {dataIsLoaded ? (
+        <Layout>
+          <LandingText />
+          <ReleaseEntry releases={releases} />
+        </Layout>
+      ) : (
         <Loader />
-        <LandingText />
-        <ReleaseEntry releases={releases} />
-      </Layout>
+      )}
       <style jsx>{`
         @media (min-width: 801px) {
           .main-container {

@@ -91,16 +91,28 @@ function ReleaseEntry(props) {
           </div>
           <style jsx>{`
             .release-entry-wrapper {
+              z-index: -1;
               padding-left: var(--global-margin);
               padding-right: var(--global-margin);
               font-family: var(--font1);
               font-size: var(--standard-font-size);
               text-transform: uppercase;
             }
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+
+              to {
+                opacity: 1;
+              }
+            }
             .release-cover {
               cursor: pointer;
               width: 100%;
               transition: transform 0.5s;
+              animation: fadeIn 1s;
+              animation-fill-mode: forwards;
             }
             .release-cover:hover {
               transform: scale(1.005);
@@ -132,6 +144,7 @@ function ReleaseEntry(props) {
             }
             .tracklist-details {
               margin-bottom: 2rem;
+              padding-right: 0.5rem;
             }
             .close-more-info-cross {
               width: 0.6rem;
@@ -148,8 +161,9 @@ function ReleaseEntry(props) {
             }
             .more-info-about-release {
               text-transform: none;
-              margin-bottom: 2rem;
+              margin-bottom: 4rem;
               position: relative;
+              letter-spacing: 0.05rem;
             }
             .more-info-section-title {
               margin-bottom: 1rem;
@@ -157,6 +171,12 @@ function ReleaseEntry(props) {
             }
             .about-release {
               margin-bottom: 2rem;
+            }
+
+            @media (min-width: 801px) {
+              .release-entry-wrapper {
+                font-size: var(--desktop-font-size);
+              }
             }
           `}</style>
         </div>

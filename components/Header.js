@@ -11,6 +11,7 @@ const Header = () => (
         justify-content: center;
       }
       .elis-logo {
+        padding-top: 2rem;
         width: 10rem;
       }
     `}</style>

@@ -1,15 +1,20 @@
 function Loader() {
   return (
-    <div>
-      <p>Hello world</p>
+    <div className="loader-container">
       <img className="loader" src="/img/logo-simple.png" alt="loader" />
       <style jsx>{`
+        .loader-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
         .loader {
           display: inline-block;
           position: relative;
           width: 80px;
           height: 80px;
-          animation: loader 10s infinite;
+          animation: loader 2s infinite;
         }
 
         @keyframes loader {

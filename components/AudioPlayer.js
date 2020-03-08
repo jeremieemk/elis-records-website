@@ -37,10 +37,23 @@ function AudioPlayer(props) {
       <VolumeSlider audio={audio.current} />
       <style jsx>{`
         .audio-player-container {
+          z-index: 5;
+          position: relative;
           display: flex;
           width: 100%;
           height: 2rem;
-        }
+          animation: fadeIn 1s;
+              animation-fill-mode: forwards;
+            }
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+
+              to {
+                opacity: 1;
+              }
+            }
         }
       `}</style>
     </div>
