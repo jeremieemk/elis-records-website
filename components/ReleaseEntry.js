@@ -7,6 +7,7 @@ function ReleaseEntry(props) {
 
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
+    setShowMoreDetails(true);
   }
   function renderSection(section) {
     return (
@@ -15,14 +16,14 @@ function ReleaseEntry(props) {
       </div>
     );
   }
-  function hideMoreDetails() {
+  function hideMoreDetails(e) {
     console.log("hide more details");
     setShowMoreDetails(false);
   }
 
   return (
     props.releases &&
-    props.releases.map(function(release, index) {
+    props.releases.map((release, index) => {
       let tracklist = Object.values(release.data.tracks[0]);
       return (
         <div>
@@ -59,15 +60,15 @@ function ReleaseEntry(props) {
                 </div>
               </div>
             </div>
-            {parseInt(playerDisplayId) === index && showMoreDetails && (
+            {parseInt(playerDisplayId) === index && (
               <div>
-                {
+                {showMoreDetails && (
                   <div className="more-info-about-release">
                     <img
                       className="close-more-info-cross"
                       src="/img/cross.png"
                       alt="cross"
-                      onCLick={hideMoreDetails}
+                      onClick={hideMoreDetails}
                     />
                     <div className="tracklist-details">
                       {renderSection(release.data.tracklist)}
@@ -80,7 +81,7 @@ function ReleaseEntry(props) {
                       {renderSection(release.data.credits)}
                     </div>
                   </div>
-                }
+                )}
                 <TracklistAndPlayer
                   tracklist={tracklist}
                   setPlayerDisplayId={setPlayerDisplayId}
