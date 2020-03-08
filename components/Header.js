@@ -13,6 +13,18 @@ const Header = () => (
       .elis-logo {
         padding-top: 2rem;
         width: 10rem;
+        height: auto;
+        animation: fadeIn 1s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
     `}</style>
   </div>
