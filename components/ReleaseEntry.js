@@ -16,8 +16,8 @@ function ReleaseEntry(props) {
       </div>
     );
   }
+  props.releases && console.log(props.releases);
   function hideMoreDetails(e) {
-    console.log("hide more details");
     setShowMoreDetails(false);
   }
 
@@ -73,6 +73,12 @@ function ReleaseEntry(props) {
                     <div className="tracklist-details">
                       {renderSection(release.data.tracklist)}
                     </div>
+                    <div className="buy-link">
+                      <a href={release.data.buy.url} target="_blank">
+                        BUY
+                      </a>
+                    </div>
+
                     <div className="about-release">
                       {renderSection(release.data.about)}
                     </div>
@@ -143,8 +149,12 @@ function ReleaseEntry(props) {
               padding-bottom: 0.3rem;
             }
             .tracklist-details {
-              margin-bottom: 2rem;
+              margin-bottom: 1rem;
               padding-right: 0.5rem;
+            }
+            .buy-link {
+              margin-bottom: 1rem;
+              text-decoration: underline;
             }
             .close-more-info-cross {
               width: 0.6rem;
