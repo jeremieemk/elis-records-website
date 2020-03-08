@@ -15,7 +15,15 @@ const Layout = props => (
       {props.children}
       <div className="footer">
         <div className="open-source">
-          (Built with react.js and open-sourced on{" "}
+          (Built by{" "}
+          <a
+            className="overdub-link"
+            href="https://www.overdub.dev/"
+            target="_blank"
+          >
+            overDub.dev
+          </a>{" "}
+          with next.js and open-sourced on{" "}
           <a
             className="github-link"
             href="https://github.com/jeremieemk/elis-records-website"
@@ -47,7 +55,8 @@ const Layout = props => (
         text-transform: uppercase;
         letter-spacing: 0.05rem;
       }
-      .github-link {
+      .github-link,
+      .overdub-link {
         color: var(--color2);
       }
       .open-source {

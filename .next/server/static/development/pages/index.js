@@ -329,7 +329,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 const Layout = props => __jsx("div", {
-  className: "jsx-4211353907",
+  className: "jsx-653331328",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 7
@@ -344,7 +344,7 @@ const Layout = props => __jsx("div", {
 }, __jsx("link", {
   rel: "shortcut icon",
   href: "/static/favicon.ico",
-  className: "jsx-4211353907",
+  className: "jsx-653331328",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 9
@@ -353,14 +353,14 @@ const Layout = props => __jsx("div", {
 }), __jsx("link", {
   rel: "stylesheet",
   href: "/css/priority.css",
-  className: "jsx-4211353907",
+  className: "jsx-653331328",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 10
   },
   __self: undefined
 })), __jsx("div", {
-  className: "jsx-4211353907" + " " + "container",
+  className: "jsx-653331328" + " " + "container",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 13
@@ -373,38 +373,47 @@ const Layout = props => __jsx("div", {
   },
   __self: undefined
 }), props.children, __jsx("div", {
-  className: "jsx-4211353907" + " " + "footer",
+  className: "jsx-653331328" + " " + "footer",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 16
   },
   __self: undefined
 }, __jsx("div", {
-  className: "jsx-4211353907" + " " + "open-source",
+  className: "jsx-653331328" + " " + "open-source",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 17
   },
   __self: undefined
-}, "(Built with react.js and open-sourced on", " ", __jsx("a", {
-  href: "https://github.com/jeremieemk/elis-records-website",
+}, "(Built by", " ", __jsx("a", {
+  href: "https://www.overdub.dev/",
   target: "_blank",
-  className: "jsx-4211353907" + " " + "github-link",
+  className: "jsx-653331328" + " " + "overdub-link",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 19
   },
   __self: undefined
+}, "overDub.dev"), " ", "with next.js and open-sourced on", " ", __jsx("a", {
+  href: "https://github.com/jeremieemk/elis-records-website",
+  target: "_blank",
+  className: "jsx-653331328" + " " + "github-link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 27
+  },
+  __self: undefined
 }, "GitHub"), ")"), __jsx(_SocialIcons__WEBPACK_IMPORTED_MODULE_5__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 28
+    lineNumber: 36
   },
   __self: undefined
 }))), _style_GlobalStyles__WEBPACK_IMPORTED_MODULE_4__["default"], __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "4211353907",
+  id: "653331328",
   __self: undefined
-}, ".container.jsx-4211353907{position:relative;width:100%;}.footer.jsx-4211353907{width:100%;position:absolute;bottom:-2;margin-bottom:10rem;margin-top:2rem;text-align:center;color:black;font-family:var(--font1);font-size:var(--standard-font-size);text-transform:uppercase;-webkit-letter-spacing:0.05rem;-moz-letter-spacing:0.05rem;-ms-letter-spacing:0.05rem;letter-spacing:0.05rem;}.github-link.jsx-4211353907{color:var(--color2);}.open-source.jsx-4211353907{margin-bottom:0.5rem;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qZXJlbWllL3dlYi8zM19lbGlzL2NvbXBvbmVudHMvTGF5b3V0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQStCZ0IsQUFHMkIsQUFJUCxBQWFTLEFBR0MsV0FmSCxPQUpQLEVBaUJiLENBR0EsUUFuQkEsQUFJWSxVQUNVLG9CQUNKLGdCQUNFLGtCQUNOLFlBQ2EseUJBQ1csb0NBQ1gseUJBQ0YsNkdBQ3pCIiwiZmlsZSI6Ii9Vc2Vycy9qZXJlbWllL3dlYi8zM19lbGlzL2NvbXBvbmVudHMvTGF5b3V0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEhlYWRlciBmcm9tIFwiLi9IZWFkZXJcIjtcbmltcG9ydCBIZWFkIGZyb20gXCJuZXh0L2hlYWRcIjtcbmltcG9ydCBHbG9iYWxTdHlsZXMgZnJvbSBcIi4uL3N0eWxlL0dsb2JhbFN0eWxlc1wiO1xuaW1wb3J0IFNvY2lhbEljb25zIGZyb20gXCIuL1NvY2lhbEljb25zXCI7XG5cbmNvbnN0IExheW91dCA9IHByb3BzID0+IChcbiAgPGRpdj5cbiAgICA8SGVhZD5cbiAgICAgIDxsaW5rIHJlbD1cInNob3J0Y3V0IGljb25cIiBocmVmPVwiL3N0YXRpYy9mYXZpY29uLmljb1wiIC8+XG4gICAgICA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cIi9jc3MvcHJpb3JpdHkuY3NzXCI+PC9saW5rPlxuICAgIDwvSGVhZD5cblxuICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyXCI+XG4gICAgICA8SGVhZGVyIC8+XG4gICAgICB7cHJvcHMuY2hpbGRyZW59XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZvb3RlclwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm9wZW4tc291cmNlXCI+XG4gICAgICAgICAgKEJ1aWx0IHdpdGggcmVhY3QuanMgYW5kIG9wZW4tc291cmNlZCBvbntcIiBcIn1cbiAgICAgICAgICA8YVxuICAgICAgICAgICAgY2xhc3NOYW1lPVwiZ2l0aHViLWxpbmtcIlxuICAgICAgICAgICAgaHJlZj1cImh0dHBzOi8vZ2l0aHViLmNvbS9qZXJlbWllZW1rL2VsaXMtcmVjb3Jkcy13ZWJzaXRlXCJcbiAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgPlxuICAgICAgICAgICAgR2l0SHViXG4gICAgICAgICAgPC9hPlxuICAgICAgICAgIClcbiAgICAgICAgPC9kaXY+XG4gICAgICAgIDxTb2NpYWxJY29ucyAvPlxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gICAge0dsb2JhbFN0eWxlc31cbiAgICA8c3R5bGUganN4PntgXG4gICAgICAuY29udGFpbmVyIHtcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgIH1cbiAgICAgIC5mb290ZXIge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICBib3R0b206IC0yO1xuICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHJlbTtcbiAgICAgICAgbWFyZ2luLXRvcDogMnJlbTtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1mb250MSk7XG4gICAgICAgIGZvbnQtc2l6ZTogdmFyKC0tc3RhbmRhcmQtZm9udC1zaXplKTtcbiAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuMDVyZW07XG4gICAgICB9XG4gICAgICAuZ2l0aHViLWxpbmsge1xuICAgICAgICBjb2xvcjogdmFyKC0tY29sb3IyKTtcbiAgICAgIH1cbiAgICAgIC5vcGVuLXNvdXJjZSB7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDAuNXJlbTtcbiAgICAgIH1cbiAgICBgfTwvc3R5bGU+XG4gIDwvZGl2PlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgTGF5b3V0O1xuIl19 */\n/*@ sourceURL=/Users/jeremie/web/33_elis/components/Layout.js */"));
+}, ".container.jsx-653331328{position:relative;width:100%;}.footer.jsx-653331328{width:100%;position:absolute;bottom:-2;margin-bottom:10rem;margin-top:2rem;text-align:center;color:black;font-family:var(--font1);font-size:var(--standard-font-size);text-transform:uppercase;-webkit-letter-spacing:0.05rem;-moz-letter-spacing:0.05rem;-ms-letter-spacing:0.05rem;letter-spacing:0.05rem;}.github-link.jsx-653331328,.overdub-link.jsx-653331328{color:var(--color2);}.open-source.jsx-653331328{margin-bottom:0.5rem;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qZXJlbWllL3dlYi8zM19lbGlzL2NvbXBvbmVudHMvTGF5b3V0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVDZ0IsQUFHMkIsQUFJUCxBQWNTLEFBR0MsV0FoQkgsT0FKUCxFQWtCYixDQUdBLFFBcEJBLEFBSVksVUFDVSxvQkFDSixnQkFDRSxrQkFDTixZQUNhLHlCQUNXLG9DQUNYLHlCQUNGLDZHQUN6QiIsImZpbGUiOiIvVXNlcnMvamVyZW1pZS93ZWIvMzNfZWxpcy9jb21wb25lbnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBIZWFkZXIgZnJvbSBcIi4vSGVhZGVyXCI7XG5pbXBvcnQgSGVhZCBmcm9tIFwibmV4dC9oZWFkXCI7XG5pbXBvcnQgR2xvYmFsU3R5bGVzIGZyb20gXCIuLi9zdHlsZS9HbG9iYWxTdHlsZXNcIjtcbmltcG9ydCBTb2NpYWxJY29ucyBmcm9tIFwiLi9Tb2NpYWxJY29uc1wiO1xuXG5jb25zdCBMYXlvdXQgPSBwcm9wcyA9PiAoXG4gIDxkaXY+XG4gICAgPEhlYWQ+XG4gICAgICA8bGluayByZWw9XCJzaG9ydGN1dCBpY29uXCIgaHJlZj1cIi9zdGF0aWMvZmF2aWNvbi5pY29cIiAvPlxuICAgICAgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIGhyZWY9XCIvY3NzL3ByaW9yaXR5LmNzc1wiPjwvbGluaz5cbiAgICA8L0hlYWQ+XG5cbiAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lclwiPlxuICAgICAgPEhlYWRlciAvPlxuICAgICAge3Byb3BzLmNoaWxkcmVufVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmb290ZXJcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJvcGVuLXNvdXJjZVwiPlxuICAgICAgICAgIChCdWlsdCBieXtcIiBcIn1cbiAgICAgICAgICA8YVxuICAgICAgICAgICAgY2xhc3NOYW1lPVwib3ZlcmR1Yi1saW5rXCJcbiAgICAgICAgICAgIGhyZWY9XCJodHRwczovL3d3dy5vdmVyZHViLmRldi9cIlxuICAgICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICBvdmVyRHViLmRldlxuICAgICAgICAgIDwvYT57XCIgXCJ9XG4gICAgICAgICAgd2l0aCBuZXh0LmpzIGFuZCBvcGVuLXNvdXJjZWQgb257XCIgXCJ9XG4gICAgICAgICAgPGFcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cImdpdGh1Yi1saW5rXCJcbiAgICAgICAgICAgIGhyZWY9XCJodHRwczovL2dpdGh1Yi5jb20vamVyZW1pZWVtay9lbGlzLXJlY29yZHMtd2Vic2l0ZVwiXG4gICAgICAgICAgICB0YXJnZXQ9XCJfYmxhbmtcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIEdpdEh1YlxuICAgICAgICAgIDwvYT5cbiAgICAgICAgICApXG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8U29jaWFsSWNvbnMgLz5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICAgIHtHbG9iYWxTdHlsZXN9XG4gICAgPHN0eWxlIGpzeD57YFxuICAgICAgLmNvbnRhaW5lciB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICB9XG4gICAgICAuZm9vdGVyIHtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgYm90dG9tOiAtMjtcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTByZW07XG4gICAgICAgIG1hcmdpbi10b3A6IDJyZW07XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgY29sb3I6IGJsYWNrO1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tZm9udDEpO1xuICAgICAgICBmb250LXNpemU6IHZhcigtLXN0YW5kYXJkLWZvbnQtc2l6ZSk7XG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjA1cmVtO1xuICAgICAgfVxuICAgICAgLmdpdGh1Yi1saW5rLFxuICAgICAgLm92ZXJkdWItbGluayB7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1jb2xvcjIpO1xuICAgICAgfVxuICAgICAgLm9wZW4tc291cmNlIHtcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC41cmVtO1xuICAgICAgfVxuICAgIGB9PC9zdHlsZT5cbiAgPC9kaXY+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBMYXlvdXQ7XG4iXX0= */\n/*@ sourceURL=/Users/jeremie/web/33_elis/components/Layout.js */"));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
