@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import PlayButton from "./PlayButton";
 import ProgressBar from "./ProgressBar";
 import VolumeSlider from "./VolumeSlider";
+import Loader from "./Loader";
 
 function AudioPlayer(props) {
   const [progression, setProgression] = useState(0);
@@ -21,20 +22,22 @@ function AudioPlayer(props) {
 
   return (
     <div>
-      <div className="audio-player-container">
-        <PlayButton
-          handlePlayButtonClick={props.handlePlayButtonClick}
-          playingStatus={props.playingStatus}
-        />
-        <ProgressBar audio={audio.current} progression={progression} />
+      {!audio.current ? (
+        <Loader />
+      ) : (
+        <div className="player-loaded">
+          <div className="audio-player-container">
+            <PlayButton
+              handlePlayButtonClick={props.handlePlayButtonClick}
+              playingStatus={props.playingStatus}
+            />
+            <ProgressBar audio={audio.current} progression={progression} />
+          </div>
+          <VolumeSlider audio={audio.current} />
+        </div>
+      )}
+      <audio ref={audio} onTimeUpdate={updateProgress} src={props.track.url} />
 
-        <audio
-          ref={audio}
-          onTimeUpdate={updateProgress}
-          src={props.track.url}
-        />
-      </div>
-      <VolumeSlider audio={audio.current} />
       <style jsx>{`
         .audio-player-container {
           z-index: 5;
@@ -43,17 +46,28 @@ function AudioPlayer(props) {
           width: 100%;
           height: 2rem;
           animation: fadeIn 1s;
-              animation-fill-mode: forwards;
-            }
-            @keyframes fadeIn {
-              from {
-                opacity: 0;
-              }
+          animation-fill-mode: forwards;
+        }
+        .is-loading {
+          animation: blurAnimation 1s;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
 
-              to {
-                opacity: 1;
-              }
-            }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes blurAnimation {
+          from {
+            filter: blur(0px);
+          }
+
+          to {
+            filter: blur(5px);
+          }
         }
       `}</style>
     </div>

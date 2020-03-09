@@ -38,6 +38,9 @@ function Index() {
         <Loader />
       )}
       <style jsx>{`
+        .main-container {
+          height: 100vh;
+        }
         .loaded-site-container {
           animation: fadeIn 1s;
           animation-fill-mode: forwards;
