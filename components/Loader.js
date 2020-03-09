@@ -21,7 +21,7 @@ function Loader(props) {
         .loader {
           display: inline-block;
           position: relative;
-          animation: loader 2s infinite;
+          animation: loader 2.6s infinite;
         }
 
         @keyframes loader {
