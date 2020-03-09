@@ -147,7 +147,7 @@ function ReleaseEntry(props) {
               text-decoration: underline;
             }
             .close-more-info-cross {
-              width: 0.6rem;
+              width: 0.7rem;
               position: absolute;
               right: 0;
               top: 0;

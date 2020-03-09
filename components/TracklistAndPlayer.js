@@ -60,12 +60,12 @@ function TracklistAndPlayer(props) {
           border-top: 0.2px solid black;
         }
         .cross {
-          width: 0.5rem;
+          width: 0.7rem;
           position: absolute;
           right: 0.3rem;
           top: 0.3rem;
           transition: transform 0.3s;
-          opacity: 0.7;
+          opacity: 0.5;
         }
         .cross:hover {
           transform: scale(1.2);

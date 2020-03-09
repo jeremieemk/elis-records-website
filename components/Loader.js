@@ -1,7 +1,16 @@
-function Loader() {
+function Loader(props) {
+  const loaderSize = {
+    width: `${props.size}px`,
+    height: `${props.size}px`
+  };
   return (
     <div className="loader-container">
-      <img className="loader" src="/img/logo-simple.png" alt="loader" />
+      <img
+        className="loader"
+        src="/img/logo-simple.png"
+        alt="loader"
+        style={loaderSize}
+      />
       <style jsx>{`
         .loader-container {
           display: flex;
@@ -12,8 +21,6 @@ function Loader() {
         .loader {
           display: inline-block;
           position: relative;
-          width: 80px;
-          height: 80px;
           animation: loader 2s infinite;
         }
 

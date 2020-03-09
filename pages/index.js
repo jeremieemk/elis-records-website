@@ -35,7 +35,7 @@ function Index() {
           </Layout>
         </div>
       ) : (
-        <Loader />
+        <Loader size="80" />
       )}
       <style jsx>{`
         .main-container {
