@@ -22,7 +22,7 @@ function AudioPlayer(props) {
 
   return (
     <div>
-      {!audio.current ? (
+      {!(audio.current && audio.current.currentTime > 0) ? (
         <Loader size="40" />
       ) : (
         <div className="player-loaded">
