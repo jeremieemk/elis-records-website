@@ -18,8 +18,12 @@ const Header = () => (
       }
       @media (min-width: 801px) {
         .elis-logo {
-          width: auto;
           height: 8rem;
+        }
+      }
+      @media (min-width: 2200px) {
+        .elis-logo {
+          height: 11rem;
         }
       }
     `}</style>

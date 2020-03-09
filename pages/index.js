@@ -62,6 +62,12 @@ function Index() {
             padding-right: 25%;
           }
         }
+        @media (min-width: 2200px) {
+          .main-container {
+            padding-left: 35%;
+            padding-right: 35%;
+          }
+        }
       `}</style>
     </div>
   );

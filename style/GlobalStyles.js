@@ -8,7 +8,7 @@ const GlobalStyles = (
     }
     @font-face {
       font-family: "MonospaceTypewriter";
-      src: url("fonts/MonospaceTypewriter.ttf") format("truetype");
+      src: url("fonts/Inconsolata-Regular.ttf") format("truetype");
     }
     @font-face {
       font-family: "WorkSans-Bold";
@@ -24,7 +24,7 @@ const GlobalStyles = (
     :root {
       --global-margin: 2rem;
       --standard-font-size: 0.75rem;
-      --desktop-font-size: 0.9rem;
+      --desktop-font-size: 1.1rem;
       --desktop-padding: 25%;
       --color1: #f7f7f7;
       --color2: #f74d2c;

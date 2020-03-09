@@ -6,6 +6,7 @@ function ReleaseEntry(props) {
   const [showMoreDetails, setShowMoreDetails] = useState(true);
 
   // let releaseCover = useRef();
+  // releaseCover.current && console.log(releaseCover.current);
 
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
@@ -47,7 +48,7 @@ function ReleaseEntry(props) {
                 src={release.data.cover.url}
                 alt="release-cover"
                 data-tag={index}
-                // ref={releaseCover[index]}
+                // ref={releaseCover}
               />
               <div className="release-details">
                 <div
@@ -131,8 +132,8 @@ function ReleaseEntry(props) {
             }
 
             .release-details {
-              padding-top: 1rem;
-              padding-bottom: 1rem;
+              padding-top: 1.2rem;
+              padding-bottom: 3rem;
               padding-left: 0.5rem;
               padding-right: 0.5rem;
               text-align: center;
@@ -148,10 +149,10 @@ function ReleaseEntry(props) {
               width: 0.5rem;
               margin-right: 0.7rem;
             }
-            .artist-name,
+
+            .release-name,
             .release-name {
               padding-top: 0.5rem;
-              padding-bottom: 0.3rem;
             }
             .tracklist-details {
               margin-bottom: 1rem;
@@ -180,6 +181,7 @@ function ReleaseEntry(props) {
               margin-bottom: 4rem;
               position: relative;
               letter-spacing: 0.05rem;
+              line-height: 1rem;
             }
             .more-info-section-title {
               margin-bottom: 1rem;

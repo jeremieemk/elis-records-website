@@ -41,8 +41,6 @@ const Layout = props => (
         width: 100%;
       }
       .footer {
-        width: 100%;
-        position: absolute;
         bottom: -2;
         margin-bottom: 10rem;
         margin-top: 3rem;
@@ -50,7 +48,8 @@ const Layout = props => (
         color: black;
         font-family: var(--font1);
         font-size: var(--standard-font-size);
-
+        padding-left: 2rem;
+        padding-right: 2rem;
         letter-spacing: 0.05rem;
       }
       .github-link,
@@ -63,6 +62,11 @@ const Layout = props => (
       }
       .email-address {
         margin-bottom: 1rem;
+      }
+      @media (min-width: 801px) {
+        .footer {
+          font-size: 1.1rem;
+        }
       }
     `}</style>
   </div>

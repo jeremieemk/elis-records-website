@@ -62,8 +62,8 @@ function TracklistAndPlayer(props) {
         .cross {
           width: 0.7rem;
           position: absolute;
-          right: 0.3rem;
-          top: 0.3rem;
+          right: 1rem;
+          top: 1rem;
           transition: transform 0.3s;
           opacity: 0.5;
         }
@@ -79,6 +79,11 @@ function TracklistAndPlayer(props) {
         .tracklist-item {
           padding-bottom: 0.5rem;
           opacity: 0.5;
+        }
+        @media (min-width: 801px) {
+          .cross {
+            width: 0.9rem;
+          }
         }
       `}</style>
     </div>
