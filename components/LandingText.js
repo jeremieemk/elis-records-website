@@ -5,9 +5,9 @@ const LandingText = () => (
     <div className="LandingText-wrapper">
       <div className="text-wrapper">
         <p>
-          We are a record label and a collective of musicians, producers,
-          beatmakers and songwriters based in Lisbon, Paris, São Paulo and all
-          over the world...
+          Elis records is a record label and a collective of musicians,
+          producers, beatmakers and songwriters based in Lisbon, Paris, São
+          Paulo and all over the&nbsp;world...
         </p>
       </div>
       <SocialIcons />

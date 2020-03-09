@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => (
   <div className="header-container">
     <Link href="/">
-      <img className="elis-logo" src="/img/logo.jpg" alt="logo" />
+      <img className="elis-logo" src="/img/logo-simple.jpg" alt="logo" />
     </Link>
     <style jsx>{`
       .header-container {
