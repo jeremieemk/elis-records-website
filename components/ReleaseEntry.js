@@ -184,6 +184,9 @@ function ReleaseEntry(props) {
               .release-entry-wrapper {
                 font-size: var(--desktop-font-size);
               }
+              .more-info-about-release {
+                line-height: 1.3rem;
+              }
             }
           `}</style>
         </div>
