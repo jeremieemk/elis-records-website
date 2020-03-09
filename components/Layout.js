@@ -17,7 +17,8 @@ function Layout(props) {
     <div>
       <Head>
         <title>Elis Records</title>
-        <meta name="description" content={landingText}></meta>
+        <meta name="description" content={landingText} />
+        <meta charset="utf-8" />
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <link rel="stylesheet" href="/css/priority.css"></link>
       </Head>
