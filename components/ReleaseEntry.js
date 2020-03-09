@@ -5,17 +5,9 @@ function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
   const [showMoreDetails, setShowMoreDetails] = useState(true);
 
-  // let releaseCover = useRef();
-  // releaseCover.current && console.log(releaseCover.current);
-
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
     setShowMoreDetails(true);
-    // releaseCover.current &&
-    //   window.scrollTo({
-    //     behavior: "smooth",
-    //     top: releaseCover.current.offsetTop
-    //   });
   }
   function renderSection(section) {
     return (
@@ -32,8 +24,6 @@ function ReleaseEntry(props) {
     return date.toLocaleDateString();
   }
 
-  props.releases && console.log(props.releases);
-
   return (
     props.releases &&
     props.releases.map((release, index) => {
@@ -48,7 +38,6 @@ function ReleaseEntry(props) {
                 src={release.data.cover.url.slice(0, -21)}
                 alt="release-cover"
                 data-tag={index}
-                // ref={releaseCover}
               />
               <div className="release-details">
                 <div
