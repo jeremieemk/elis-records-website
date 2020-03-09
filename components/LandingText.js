@@ -1,14 +1,11 @@
 import SocialIcons from "../components/SocialIcons";
+import landingText from "./text/landingText";
 
 const LandingText = () => (
   <div>
     <div className="LandingText-wrapper">
       <div className="text-wrapper">
-        <p>
-          Elis records is a record label and a collective of musicians,
-          producers, beatmakers and songwriters based in Lisbon, Paris, São
-          Paulo and all over the&nbsp;world...
-        </p>
+        <p>{landingText}</p>
       </div>
       <SocialIcons />
     </div>

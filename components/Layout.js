@@ -3,6 +3,7 @@ import Head from "next/head";
 import GlobalStyles from "../style/GlobalStyles";
 import { initGA, logPageView } from "./utils/analytics";
 import { useEffect } from "react";
+import landingText from "./text/landingText";
 
 function Layout(props) {
   useEffect(() => {
@@ -15,6 +16,8 @@ function Layout(props) {
   return (
     <div>
       <Head>
+        <title>Elis Records Homepage</title>
+        <meta name="description" content={landingText}></meta>
         <link rel="shortcut icon" href="/img/favicon.ico" />
         <link rel="stylesheet" href="/css/priority.css"></link>
       </Head>
