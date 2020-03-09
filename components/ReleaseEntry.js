@@ -16,7 +16,6 @@ function ReleaseEntry(props) {
       </div>
     );
   }
-  props.releases && console.log(props.releases);
   function hideMoreDetails(e) {
     setShowMoreDetails(false);
   }

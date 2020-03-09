@@ -23,7 +23,9 @@ function AudioPlayer(props) {
   return (
     <div>
       {!(audio.current && audio.current.currentTime > 0) ? (
-        <Loader size="40" />
+        <div className="loader-container">
+          <Loader size="37" />
+        </div>
       ) : (
         <div className="player-loaded">
           <div className="audio-player-container">
@@ -48,9 +50,10 @@ function AudioPlayer(props) {
           animation: fadeIn 1s;
           animation-fill-mode: forwards;
         }
-        .is-loading {
-          animation: blurAnimation 1s;
+        .loader-container {
+          padding-bottom: 1rem;
         }
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -58,15 +61,6 @@ function AudioPlayer(props) {
 
           to {
             opacity: 1;
-          }
-        }
-        @keyframes blurAnimation {
-          from {
-            filter: blur(0px);
-          }
-
-          to {
-            filter: blur(5px);
           }
         }
       `}</style>
