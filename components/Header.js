@@ -14,7 +14,7 @@ const Header = () => (
       .elis-logo {
         padding-top: 2.4rem;
         width: auto;
-        height: 5rem;
+        height: 4rem;
       }
       @media (min-width: 801px) {
         .elis-logo {
