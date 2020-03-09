@@ -1,7 +1,6 @@
 import Header from "./Header";
 import Head from "next/head";
 import GlobalStyles from "../style/GlobalStyles";
-import SocialIcons from "./SocialIcons";
 
 const Layout = props => (
   <div>
@@ -14,8 +13,9 @@ const Layout = props => (
       <Header />
       {props.children}
       <div className="footer">
+        <p className="email-address">ola@elis-records.com</p>
         <div className="open-source">
-          (Built by{" "}
+          built by{" "}
           <a
             className="overdub-link"
             href="https://www.overdub.dev/"
@@ -31,9 +31,7 @@ const Layout = props => (
           >
             GitHub
           </a>
-          )
         </div>
-        <SocialIcons />
       </div>
     </div>
     {GlobalStyles}
@@ -47,12 +45,12 @@ const Layout = props => (
         position: absolute;
         bottom: -2;
         margin-bottom: 10rem;
-        margin-top: 2rem;
+        margin-top: 3rem;
         text-align: center;
         color: black;
         font-family: var(--font1);
         font-size: var(--standard-font-size);
-        text-transform: uppercase;
+
         letter-spacing: 0.05rem;
       }
       .github-link,
@@ -61,6 +59,10 @@ const Layout = props => (
       }
       .open-source {
         margin-bottom: 0.5rem;
+        opacity: 0.7;
+      }
+      .email-address {
+        margin-bottom: 1rem;
       }
     `}</style>
   </div>

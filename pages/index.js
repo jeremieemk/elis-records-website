@@ -31,6 +31,7 @@ function Index() {
         <div className="loaded-site-container">
           <Layout>
             <LandingText />
+
             <ReleaseEntry releases={releases} />
           </Layout>
         </div>

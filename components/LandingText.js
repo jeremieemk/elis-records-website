@@ -1,3 +1,5 @@
+import SocialIcons from "../components/SocialIcons";
+
 const LandingText = () => (
   <div>
     <div className="LandingText-wrapper">
@@ -7,9 +9,8 @@ const LandingText = () => (
           beatmakers and songwriters based in Lisbon, Paris, São Paulo and all
           over the world...
         </p>
-        {/* <p>Listen to our releases!</p> */}
       </div>
-      {/* <img className="arrow" src="/img/scroll.png" alt="arrow" /> */}
+      <SocialIcons />
     </div>
     <style jsx>{`
       .LandingText-wrapper {
@@ -24,6 +25,7 @@ const LandingText = () => (
         letter-spacing: 0.05rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+        text-align: center;
       }
 
       .arrow {

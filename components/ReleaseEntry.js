@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import TracklistAndPlayer from "./TracklistAndPlayer";
 
 function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
   const [showMoreDetails, setShowMoreDetails] = useState(true);
 
+  // let releaseCover = useRef();
+
   function showPlayer(event) {
     setPlayerDisplayId(event.target.getAttribute("data-tag"));
     setShowMoreDetails(true);
+    // releaseCover.current &&
+    //   window.scrollTo({
+    //     behavior: "smooth",
+    //     top: releaseCover.current.offsetTop
+    //   });
   }
   function renderSection(section) {
     return (
@@ -19,6 +26,12 @@ function ReleaseEntry(props) {
   function hideMoreDetails(e) {
     setShowMoreDetails(false);
   }
+  function convertDate(dateString) {
+    var date = new Date(dateString);
+    return date.toLocaleDateString();
+  }
+
+  props.releases && console.log(props.releases);
 
   return (
     props.releases &&
@@ -34,6 +47,7 @@ function ReleaseEntry(props) {
                 src={release.data.cover.url}
                 alt="release-cover"
                 data-tag={index}
+                // ref={releaseCover[index]}
               />
               <div className="release-details">
                 <div
@@ -72,6 +86,9 @@ function ReleaseEntry(props) {
                     <div className="tracklist-details">
                       {renderSection(release.data.tracklist)}
                     </div>
+                    <div className="release-date">
+                      Released {convertDate(release.data["release-date"])}
+                    </div>
                     <div className="buy-link">
                       <a href={release.data.buy.url} target="_blank">
                         BUY
@@ -107,10 +124,10 @@ function ReleaseEntry(props) {
             .release-cover {
               cursor: pointer;
               width: 100%;
-              transition: transform 0.5s;
+              transition: opacity 0.2s;
             }
             .release-cover:hover {
-              transform: scale(1.005);
+              opacity: 0.8;
             }
 
             .release-details {
@@ -121,12 +138,11 @@ function ReleaseEntry(props) {
               text-align: center;
               letter-spacing: 0.05rem;
               transition: opacity 0.3s;
-              transition: transform 0.5s;
+
               cursor: pointer;
             }
             .release-details:hover {
-              opacity: 0.85;
-              transform: scale(1.01);
+              opacity: 0.7;
             }
             .mini-play {
               width: 0.5rem;
@@ -142,6 +158,7 @@ function ReleaseEntry(props) {
               padding-right: 0.5rem;
             }
             .buy-link {
+              margin-top: 1rem;
               margin-bottom: 1rem;
               text-decoration: underline;
             }
