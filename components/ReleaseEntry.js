@@ -45,7 +45,7 @@ function ReleaseEntry(props) {
               <img
                 className="release-cover"
                 key={`cover${index}`}
-                src={release.data.cover.url}
+                src={release.data.cover.url.slice(0, -21)}
                 alt="release-cover"
                 data-tag={index}
                 // ref={releaseCover}
