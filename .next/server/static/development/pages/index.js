@@ -1135,7 +1135,7 @@ function VolumeSlider(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const landingText = "Elis Records is a new label anchored in Lisbon, connecting exciting emerging musicians, producers, beatmakers and songwriters from all over the world to foment original collaborations.";
+const landingText = "Elis Records is a new label connecting exciting emerging musicians, producers, beatmakers and songwriters from all over the world to foment original collaborations.";
 /* harmony default export */ __webpack_exports__["default"] = (landingText);
 
 /***/ }),
