@@ -4,6 +4,7 @@ import ReleaseEntry from "../components/ReleaseEntry";
 import Prismic from "prismic-javascript";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+import Metas from "../components/utils/Metas";
 
 function Index() {
   const [releases, setReleasesData] = useState(null);
@@ -26,18 +27,21 @@ function Index() {
   }, []);
 
   return (
-    <div className="main-container">
-      {dataIsLoaded ? (
-        <div className="loaded-site-container">
-          <Layout>
-            <LandingText />
+    <div>
+      <Metas />
+      <div className="main-container">
+        {dataIsLoaded ? (
+          <div className="loaded-site-container">
+            <Layout>
+              <LandingText />
 
-            <ReleaseEntry releases={releases} />
-          </Layout>
-        </div>
-      ) : (
-        <Loader size="80" />
-      )}
+              <ReleaseEntry releases={releases} />
+            </Layout>
+          </div>
+        ) : (
+          <Loader size="80" />
+        )}
+      </div>
       <style jsx>{`
         .main-container {
           height: 100vh;
