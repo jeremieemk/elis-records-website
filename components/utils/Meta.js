@@ -19,11 +19,11 @@ function Meta() {
       <link rel="stylesheet" href="/css/priority.css" />
       <meta
         property="og:image"
-        content="http://www.elis-records.com/img/logo.jpg"
+        content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
       />
       <meta
         name="twitter:image"
-        content="http://www.elis-records.com/img/logo.jpg"
+        content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
       />
     </Head>
   );

@@ -1128,7 +1128,7 @@ function Meta() {
     __self: this
   }), __jsx("meta", {
     property: "og:image",
-    content: "http://www.elis-records.com/img/logo.jpg",
+    content: "http://www.elis-records.com/img/elis-socials-img-tag.jpg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
@@ -1136,7 +1136,7 @@ function Meta() {
     __self: this
   }), __jsx("meta", {
     name: "twitter:image",
-    content: "http://www.elis-records.com/img/logo.jpg",
+    content: "http://www.elis-records.com/img/elis-socials-img-tag.jpg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
