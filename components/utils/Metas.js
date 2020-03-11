@@ -15,11 +15,11 @@ function Metas() {
       <meta property="og:url" content="http://www.elis-records.com/" />
       <meta
         property="og:image"
-        content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
+        content="https://res.cloudinary.com/dbslwolfi/image/upload/v1583949871/ElisCreativePool/elis-socials-img-tag_n7q1ec.jpg"
       />
       <meta
         name="twitter:image"
-        content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
+        content="https://res.cloudinary.com/dbslwolfi/image/upload/v1583949871/ElisCreativePool/elis-socials-img-tag_n7q1ec.jpg"
       />
       <title>Elis Records</title>
       <meta name="description" content={landingText} />
