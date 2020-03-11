@@ -1,9 +1,8 @@
 import Header from "./Header";
-import Head from "next/head";
 import GlobalStyles from "../style/GlobalStyles";
 import { initGA, logPageView } from "./utils/analytics";
+import Meta from "./utils/Meta";
 import { useEffect } from "react";
-import landingText from "./text/landingText";
 
 function Layout(props) {
   useEffect(() => {
@@ -15,13 +14,7 @@ function Layout(props) {
   }, [window.GA_INITIALIZED]);
   return (
     <div>
-      <Head>
-        <title>Elis Records</title>
-        <meta name="description" content={landingText} />
-        <meta charset="utf-8" />
-        <link rel="shortcut icon" href="/img/favicon.ico" />
-        <link rel="stylesheet" href="/css/priority.css"></link>
-      </Head>
+      <Meta />
 
       <div className="container">
         <Header />
