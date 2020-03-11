@@ -16,8 +16,6 @@ function Layout(props) {
   return (
     <div>
       <Head>
-        <title>Elis Records</title>
-        <meta name="description" content={landingText} />
         <meta property="og:type" content="website" />
         <meta name="og:title" property="og:title" content="Elis Records" />
         <meta
@@ -27,9 +25,6 @@ function Layout(props) {
         />
         <meta property="og:site_name" content="Elis Records" />
         <meta property="og:url" content="http://www.elis-records.com/" />
-        <link rel="icon" type="image/png" href="/img/favicon.ico" />
-        <link rel="apple-touch-icon" href="/img/favicon.ico" />
-        <link rel="stylesheet" href="/css/priority.css" />
         <meta
           property="og:image"
           content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
@@ -38,6 +33,11 @@ function Layout(props) {
           name="twitter:image"
           content="http://www.elis-records.com/img/elis-socials-img-tag.jpg"
         />
+        <title>Elis Records</title>
+        <meta name="description" content={landingText} />
+        <link rel="icon" type="image/png" href="/img/favicon.ico" />
+        <link rel="apple-touch-icon" href="/img/favicon.ico" />
+        <link rel="stylesheet" href="/css/priority.css" />
       </Head>
 
       <div className="container">
