@@ -1327,7 +1327,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 function App(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps;
-  console.log("test");
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       releases = _useState[0],
@@ -1377,7 +1376,7 @@ function App(_ref) {
     dataIsLoaded: dataIsLoaded,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   });

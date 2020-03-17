@@ -1,5 +1,4 @@
 import Header from "./Header";
-
 import GlobalStyles from "../style/GlobalStyles";
 import { initGA, logPageView } from "./utils/analytics";
 import { useEffect } from "react";

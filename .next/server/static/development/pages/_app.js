@@ -116,7 +116,6 @@ function App({
   Component,
   pageProps
 }) {
-  console.log("test");
   const {
     0: releases,
     1: setReleasesData
@@ -149,7 +148,7 @@ function App({
     dataIsLoaded: dataIsLoaded,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   });

@@ -2,7 +2,6 @@ import Prismic from "prismic-javascript";
 import { useEffect, useState } from "react";
 
 function App({ Component, pageProps }) {
-  console.log("test");
   const [releases, setReleasesData] = useState(null);
   const [dataIsLoaded, setDataIsLoaded] = useState(false);
   const apiEndpoint = "https://elis-records.prismic.io/api/v2";
