@@ -10,7 +10,7 @@ function Layout(props) {
       window.GA_INITIALIZED = true;
     }
     logPageView();
-  }, [window.GA_INITIALIZED]);
+  }, []);
   return (
     <div>
       <div className="container">

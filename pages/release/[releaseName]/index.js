@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Layout from "../../../components/Layout";
 
 function Release(props) {
   const router = useRouter();
@@ -11,9 +12,11 @@ function Release(props) {
     );
   console.log(selectedRelease);
   return (
-    <div>
-      <h1>Release: {releaseName}</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Release: {releaseName}</h1>
+      </div>
+    </Layout>
   );
 }
 
