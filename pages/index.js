@@ -1,41 +1,20 @@
 import Layout from "../components/Layout";
 import LandingText from "../components/LandingText";
 import ReleaseEntry from "../components/ReleaseEntry";
-import Prismic from "prismic-javascript";
-import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import Metas from "../components/utils/Metas";
 
-function Index() {
-  const [releases, setReleasesData] = useState(null);
-  const [dataIsLoaded, setDataIsLoaded] = useState(false);
-  const apiEndpoint = "https://elis-records.prismic.io/api/v2";
-  const accessToken = "";
-  const Client = Prismic.client(apiEndpoint, { accessToken });
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await Client.query(
-        Prismic.Predicates.at("document.type", "release"),
-        { orderings: "[my.release.release-date desc]" }
-      );
-      if (response) {
-        setReleasesData(response.results);
-        setDataIsLoaded(true);
-      }
-    };
-    fetchData();
-  }, []);
-
+function Index(props) {
   return (
     <div>
       <Metas />
       <div className="main-container">
-        {dataIsLoaded ? (
+        {props.dataIsLoaded ? (
           <div className="loaded-site-container">
             <Layout>
               <LandingText />
 
-              <ReleaseEntry releases={releases} />
+              <ReleaseEntry releases={props.releases} />
             </Layout>
           </div>
         ) : (
