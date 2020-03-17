@@ -14,7 +14,6 @@ function Layout(props) {
   return (
     <div>
       <div className="container">
-        <Header />
         {props.children}
         <div className="footer">
           <p className="email-address">ola@elis-records.com</p>

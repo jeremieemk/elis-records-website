@@ -3,6 +3,7 @@ import LandingText from "../components/LandingText";
 import ReleaseEntry from "../components/ReleaseEntry";
 import Loader from "../components/Loader";
 import Metas from "../components/utils/Metas";
+import Header from "../components/Header";
 
 function Index(props) {
   return (
@@ -12,6 +13,7 @@ function Index(props) {
         {props.dataIsLoaded ? (
           <div className="loaded-site-container">
             <Layout>
+              <Header />
               <LandingText />
 
               <ReleaseEntry releases={props.releases} />
