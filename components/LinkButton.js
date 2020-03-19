@@ -1,11 +1,11 @@
 function LinkButton(props) {
   return (
-    <div className="button-link-container">
-      <a
-        href={props.streamingServiceLink && props.streamingServiceLink}
-        target="_blank"
-      >
-        <button className="button-link">
+    <a
+      href={props.streamingServiceLink && props.streamingServiceLink}
+      target="_blank"
+    >
+      <div className="button-link-container">
+        <div className="button-link">
           <img
             className="spotify"
             src={props.streamingServiceLogo}
@@ -13,38 +13,64 @@ function LinkButton(props) {
           />
           <p>{props.streamingService}</p>
           <img className="arrow-fwd" src="/img/arrow-fwd.png" alt="arrow-fwd" />
-        </button>
-      </a>
+        </div>
 
-      <style jsx>{`
-        .button-link {
-          border-radius: 1rem;
-          font-family: var(--font1);
-          color: white;
-          background-color: black;
-          border: none;
-          outline: none;
-          width: 10rem;
-          height: 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 0.5rem;
-        }
-        .button-link-container {
-          display: flex;
-          justify-content: center;
-        }
-        .spotify {
-          height: 1rem;
-          width: auto;
-        }
-        .arrow-fwd {
-          height: 1.5rem;
-          width: auto;
-        }
-      `}</style>
-    </div>
+        <style jsx>{`
+          .button-link-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .button-link {
+            border-radius: 1rem;
+            font-family: var(--font1);
+            color: white;
+            background-color: black;
+            border: none;
+            outline: none;
+            width: 10rem;
+            height: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            font-size: 0.6rem;
+          }
+
+          .spotify {
+            padding: 0.3rem;
+            height: 1rem;
+            width: auto;
+          }
+          .arrow-fwd {
+            padding: 0.3rem;
+            height: 1.5rem;
+            width: auto;
+          }
+          @media (min-width: 801px) {
+            .button-link {
+              border-radius: 1.5rem;
+              width: 17rem;
+              height: 3rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 1rem;
+              cursor: pointer;
+              font-size: 0.9rem;
+            }
+            .spotify {
+              padding: 0.5rem;
+              height: 1.5rem;
+            }
+            .arrow-fwd {
+              padding: 0.5rem;
+            }
+          }
+        `}</style>
+      </div>
+    </a>
   );
 }
 

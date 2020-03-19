@@ -4,18 +4,18 @@ function LinkButtonList(props) {
   function getStreamingUrl(streamingService) {
     return props.selectedRelease.data[streamingService]
       ? props.selectedRelease.data[streamingService].url
-      : "";
+      : null;
   }
-  const linkButtonListProps = [
+  const buttonProps = [
     ["SPOTIFY", "/img/spotify.png", getStreamingUrl("spotify")],
-    ["APPLE MUSIC", "/img/apple.png", getStreamingUrl("apple")],
-    ["DEEZER", "/img/deezer-small.png", getStreamingUrl("deezer")],
     ["BANDCAMP", "/img/bandcamp-small.png", getStreamingUrl("bandcamp")],
-    ["YOUTUBE", "/img/youtube-small.png", getStreamingUrl("youtube")]
+    ["APPLE MUSIC", "/img/apple.png", getStreamingUrl("apple")],
+    ["YOUTUBE", "/img/youtube-small.png", getStreamingUrl("youtube")],
+    ["DEEZER", "/img/deezer-small.png", getStreamingUrl("deezer")]
   ];
   return (
     <div className="button-link-container">
-      {linkButtonListProps.map(buttonProps => (
+      {buttonProps.map(buttonProps => (
         <LinkButton
           streamingService={buttonProps[0]}
           streamingServiceLogo={buttonProps[1]}

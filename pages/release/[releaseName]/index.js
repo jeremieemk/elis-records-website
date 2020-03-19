@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Layout from "../../../components/Layout";
 import Loader from "../../../components/Loader";
 import LinkButtonList from "../../../components/LinkButtonList";
+
 import Link from "next/link";
 
 function Release(props) {
@@ -19,9 +20,9 @@ function Release(props) {
   }, [props]);
 
   return (
-    <div className="main-container">
+    <div className="main-container" style={{ height: "100vh" }}>
       {!selectedRelease ? (
-        <Loader />
+        <Loader size="80" />
       ) : (
         <Layout>
           <div className="release-page-container">
@@ -33,11 +34,13 @@ function Release(props) {
               />
             </Link>
             <div>
-              <img
-                className="release-page-cover"
-                src={selectedRelease.data.cover.url.slice(0, -21)}
-                alt="release-cover"
-              />
+              <a href={selectedRelease.data.spotify.url} target="_blank">
+                <img
+                  className="release-page-cover"
+                  src={selectedRelease.data.cover.url.slice(0, -21)}
+                  alt="release-cover"
+                />
+              </a>
 
               <div className="release-page-details">
                 <div className="release-artist-name">
@@ -52,14 +55,11 @@ function Release(props) {
 
             <style jsx>{`
               .release-page-logo {
-                height: 2rem;
+                height: 3rem;
                 width: auto;
                 margin-bottom: 1rem;
                 margin-top: 1rem;
-              }
-              .main-container {
-                height: 100vh;
-                width: 100%;
+                cursor: pointer;
               }
               .release-page-container {
                 display: flex;
@@ -91,6 +91,27 @@ function Release(props) {
               .release-song-title {
                 margin-top: 0.3rem;
                 font-size: 0.7rem;
+              }
+              @media (min-width: 801px) {
+                .release-page-container {
+                  padding-left: 37%;
+                  padding-right: 37%;
+                }
+                .release-page-logo {
+                  height: 5rem;
+                  margin-bottom: 2rem;
+                  margin-top: 2rem;
+                }
+                .release-artist-name {
+                  font-size: 1.7rem;
+                }
+                .release-song-title {
+                  margin-top: 1rem;
+                  font-size: 1.2rem;
+                }
+                .release-page-details {
+                  margin: 3rem;
+                }
               }
             `}</style>
           </div>
