@@ -4,6 +4,7 @@ import ReleaseEntry from "../components/ReleaseEntry";
 import Loader from "../components/Loader";
 import Metas from "../components/utils/Metas";
 import Header from "../components/Header";
+import Footer from "../components/footer";
 
 function Index(props) {
   return (
@@ -17,6 +18,7 @@ function Index(props) {
               <LandingText />
 
               <ReleaseEntry releases={props.releases} />
+              <Footer />
             </Layout>
           </div>
         ) : (
