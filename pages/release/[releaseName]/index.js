@@ -85,7 +85,7 @@ function Release(props) {
               }
               .release-artist-name {
                 margin-top: 1.5rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.2rem;
                 font-size: 1.2rem;
               }
               .release-song-title {
