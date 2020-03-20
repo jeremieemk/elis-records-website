@@ -68,7 +68,7 @@ function Release(props) {
                 justify-content: center;
                 font-family: var(--font1);
                 text-transform: uppercase;
-                line-height: 1.2rem;
+                line-height: 1.6rem;
                 letter-spacing: 0.05rem;
                 padding-left: 3rem;
                 padding-right: 3rem;
@@ -92,7 +92,7 @@ function Release(props) {
                 margin-top: 0.3rem;
                 font-size: 0.7rem;
               }
-              @media (min-width: 801px) {
+              @media (min-width: 500px) {
                 .release-page-container {
                   padding-left: 37%;
                   padding-right: 37%;
