@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function Index(props) {
+  console.log(props.releases);
   return (
     <div>
       <Metas />

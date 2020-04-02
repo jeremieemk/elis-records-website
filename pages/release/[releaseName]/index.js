@@ -8,6 +8,7 @@ import Link from "next/link";
 
 function Release(props) {
   const [selectedRelease, setSelectedRelease] = useState(null);
+  const [pageIsLoaded, setPageIsLoaded] = useState(false);
   const router = useRouter();
   const { releaseName } = router.query;
   useEffect(() => {
@@ -18,6 +19,13 @@ function Release(props) {
         }
       });
   }, [props]);
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setPageIsLoaded(true);
+      console.log("page is fully loaded");
+    });
+  }, []);
 
   return (
     <div className="main-container" style={{ height: "100vh" }}>
@@ -86,11 +94,11 @@ function Release(props) {
               .release-artist-name {
                 margin-top: 1.5rem;
                 margin-bottom: 0.2rem;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
               }
               .release-song-title {
                 margin-top: 0.3rem;
-                font-size: 0.7rem;
+                font-size: 0.6rem;
               }
               @media (min-width: 500px) {
                 .release-page-container {
@@ -103,11 +111,11 @@ function Release(props) {
                   margin-top: 2rem;
                 }
                 .release-artist-name {
-                  font-size: 1.7rem;
+                  font-size: 1.5rem;
                 }
                 .release-song-title {
                   margin-top: 1rem;
-                  font-size: 1.2rem;
+                  font-size: 1.1rem;
                 }
                 .release-page-details {
                   margin: 3rem;
