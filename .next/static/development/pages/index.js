@@ -6318,12 +6318,12 @@ var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es
 
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
-  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_ef0ff7c60362f24a921f ***!
+  !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_b0ae7f9d5a2cb9eeeb96 ***!
   \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/next/dist/build/polyfills/object-assign.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0ae7f9d5a2cb9eeeb96 */ "dll-reference dll_b0ae7f9d5a2cb9eeeb96"))("./node_modules/next/dist/build/polyfills/object-assign.js");
 
 /***/ }),
 
@@ -8812,13 +8812,116 @@ module.exports = exports['default'];
 /***/ }),
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
-/*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_ef0ff7c60362f24a921f ***!
-  \*********************************************************************************************************/
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/checkPropTypes.js");
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var printWarning = function() {};
+
+if (true) {
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var loggedTypeFailures = {};
+  var has = Function.call.bind(Object.prototype.hasOwnProperty);
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (true) {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes.resetWarningCache = function() {
+  if (true) {
+    loggedTypeFailures = {};
+  }
+}
+
+module.exports = checkPropTypes;
+
 
 /***/ }),
 
@@ -9452,13 +9555,26 @@ if (true) {
 /***/ }),
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
-/*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ef0ff7c60362f24a921f ***!
-  \*******************************************************************************************************************/
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
 
 /***/ }),
 
@@ -11062,12 +11178,12 @@ if (false) {} else {
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_ef0ff7c60362f24a921f ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_b0ae7f9d5a2cb9eeeb96 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ef0ff7c60362f24a921f */ "dll-reference dll_ef0ff7c60362f24a921f"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0ae7f9d5a2cb9eeeb96 */ "dll-reference dll_b0ae7f9d5a2cb9eeeb96"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -11808,14 +11924,20 @@ try {
 
 /***/ }),
 
-/***/ "./node_modules/string-hash/index.js":
-/*!*******************************************!*\
-  !*** ./node_modules/string-hash/index.js ***!
-  \*******************************************/
+/***/ "./node_modules/styled-jsx/dist/index/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/index/index.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+/* WEBPACK VAR INJECTION */(function(process, __dirname) {/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 583:
+/***/ (function(module) {
+
 
 
 function hash(str) {
@@ -11837,15 +11959,75 @@ module.exports = hash;
 
 /***/ }),
 
-/***/ "./node_modules/styled-jsx/dist/lib/stylesheet.js":
-/*!********************************************************!*\
-  !*** ./node_modules/styled-jsx/dist/lib/stylesheet.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 590:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
+
+exports.__esModule = true;
+exports.computeId = computeId;
+exports.computeSelector = computeSelector;
+
+var _stringHash = _interopRequireDefault(__nccwpck_require__(583));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var sanitize = function sanitize(rule) {
+  return rule.replace(/\/style/gi, '\\/style');
+};
+
+var cache = {};
+/**
+ * computeId
+ *
+ * Compute and memoize a jsx id from a basedId and optionally props.
+ */
+
+function computeId(baseId, props) {
+  if (!props) {
+    return "jsx-" + baseId;
+  }
+
+  var propsToString = String(props);
+  var key = baseId + propsToString;
+
+  if (!cache[key]) {
+    cache[key] = "jsx-" + (0, _stringHash["default"])(baseId + "-" + propsToString);
+  }
+
+  return cache[key];
+}
+/**
+ * computeSelector
+ *
+ * Compute and memoize dynamic selectors.
+ */
+
+
+function computeSelector(id, css) {
+  var selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g; // Sanitize SSR-ed CSS.
+  // Client side code doesn't need to be sanitized since we use
+  // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+
+  if (typeof window === 'undefined') {
+    css = sanitize(css);
+  }
+
+  var idcss = id + css;
+
+  if (!cache[idcss]) {
+    cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+  }
+
+  return cache[idcss];
+}
+
+/***/ }),
+
+/***/ 503:
+/***/ (function(__unused_webpack_module, exports) {
+
+
 
 exports.__esModule = true;
 exports["default"] = void 0;
@@ -11864,9 +12046,7 @@ var isString = function isString(o) {
   return Object.prototype.toString.call(o) === '[object String]';
 };
 
-var StyleSheet =
-/*#__PURE__*/
-function () {
+var StyleSheet = /*#__PURE__*/function () {
   function StyleSheet(_temp) {
     var _ref = _temp === void 0 ? {} : _temp,
         _ref$name = _ref.name,
@@ -12093,7 +12273,7 @@ function () {
 
   _proto.makeStyleTag = function makeStyleTag(name, cssString, relativeToTag) {
     if (cssString) {
-      invariant(isString(cssString), 'makeStyleTag acceps only strings as second parameter');
+      invariant(isString(cssString), 'makeStyleTag accepts only strings as second parameter');
     }
 
     var tag = document.createElement('style');
@@ -12133,123 +12313,105 @@ function invariant(condition, message) {
     throw new Error("StyleSheet: " + message + ".");
   }
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
-/***/ "./node_modules/styled-jsx/dist/style.js":
-/*!***********************************************!*\
-  !*** ./node_modules/styled-jsx/dist/style.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 449:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
-"use strict";
 
 
 exports.__esModule = true;
-exports.flush = flush;
-exports["default"] = void 0;
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _stylesheetRegistry = _interopRequireDefault(__webpack_require__(/*! ./stylesheet-registry */ "./node_modules/styled-jsx/dist/stylesheet-registry.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-var styleSheetRegistry = new _stylesheetRegistry["default"]();
-
-var JSXStyle =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(JSXStyle, _Component);
-
-  function JSXStyle(props) {
-    var _this;
-
-    _this = _Component.call(this, props) || this;
-    _this.prevProps = {};
-    return _this;
-  }
-
-  JSXStyle.dynamic = function dynamic(info) {
-    return info.map(function (tagInfo) {
-      var baseId = tagInfo[0];
-      var props = tagInfo[1];
-      return styleSheetRegistry.computeId(baseId, props);
-    }).join(' ');
-  } // probably faster than PureComponent (shallowEqual)
-  ;
-
-  var _proto = JSXStyle.prototype;
-
-  _proto.shouldComponentUpdate = function shouldComponentUpdate(otherProps) {
-    return this.props.id !== otherProps.id || // We do this check because `dynamic` is an array of strings or undefined.
-    // These are the computed values for dynamic styles.
-    String(this.props.dynamic) !== String(otherProps.dynamic);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    styleSheetRegistry.remove(this.props);
-  };
-
-  _proto.render = function render() {
-    // This is a workaround to make the side effect async safe in the "render" phase.
-    // See https://github.com/zeit/styled-jsx/pull/484
-    if (this.shouldComponentUpdate(this.prevProps)) {
-      // Updates
-      if (this.prevProps.id) {
-        styleSheetRegistry.remove(this.prevProps);
-      }
-
-      styleSheetRegistry.add(this.props);
-      this.prevProps = this.props;
-    }
-
-    return null;
-  };
-
-  return JSXStyle;
-}(_react.Component);
-
 exports["default"] = JSXStyle;
 
-function flush() {
-  var cssRules = styleSheetRegistry.cssRules();
-  styleSheetRegistry.flush();
-  return cssRules;
-}
+var _react = _interopRequireDefault(__nccwpck_require__(522));
 
-/***/ }),
+var _stylesheetRegistry = __nccwpck_require__(147);
 
-/***/ "./node_modules/styled-jsx/dist/stylesheet-registry.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/styled-jsx/dist/stylesheet-registry.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports["default"] = void 0;
-
-var _stringHash = _interopRequireDefault(__webpack_require__(/*! string-hash */ "./node_modules/string-hash/index.js"));
-
-var _stylesheet = _interopRequireDefault(__webpack_require__(/*! ./lib/stylesheet */ "./node_modules/styled-jsx/dist/lib/stylesheet.js"));
+var _hash = __nccwpck_require__(590);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var sanitize = function sanitize(rule) {
-  return rule.replace(/\/style/gi, '\\/style');
+// Opt-into the new `useInsertionEffect` API in React 18, fallback to `useLayoutEffect`.
+// https://github.com/reactwg/react-18/discussions/110
+var useInsertionEffect = _react["default"].useInsertionEffect || _react["default"].useLayoutEffect;
+var defaultRegistry = typeof window !== 'undefined' ? (0, _stylesheetRegistry.createStyleRegistry)() : undefined;
+
+function JSXStyle(props) {
+  var registry = defaultRegistry ? defaultRegistry : (0, _stylesheetRegistry.useStyleRegistry)(); // If `registry` does not exist, we do nothing here.
+
+  if (!registry) {
+    return null;
+  }
+
+  if (typeof window === 'undefined') {
+    registry.add(props);
+    return null;
+  }
+
+  useInsertionEffect(function () {
+    registry.add(props);
+    return function () {
+      registry.remove(props);
+    }; // props.children can be string[], will be striped since id is identical
+  }, [props.id, String(props.dynamic)]);
+  return null;
+}
+
+JSXStyle.dynamic = function (info) {
+  return info.map(function (tagInfo) {
+    var baseId = tagInfo[0];
+    var props = tagInfo[1];
+    return (0, _hash.computeId)(baseId, props);
+  }).join(' ');
 };
 
-var StyleSheetRegistry =
-/*#__PURE__*/
-function () {
+/***/ }),
+
+/***/ 147:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+
+
+exports.__esModule = true;
+exports.createStyleRegistry = createStyleRegistry;
+exports.StyleRegistry = StyleRegistry;
+exports.useStyleRegistry = useStyleRegistry;
+exports.StyleSheetContext = exports.StyleSheetRegistry = void 0;
+
+var _react = _interopRequireWildcard(__nccwpck_require__(522));
+
+var _stylesheet = _interopRequireDefault(__nccwpck_require__(503));
+
+var _hash = __nccwpck_require__(590);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function mapRulesToStyle(cssRules, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  return cssRules.map(function (args) {
+    var id = args[0];
+    var css = args[1];
+    return _react["default"].createElement('style', {
+      id: "__" + id,
+      // Avoid warnings upon render with a key
+      key: "__" + id,
+      nonce: options.nonce ? options.nonce : undefined,
+      dangerouslySetInnerHTML: {
+        __html: css
+      }
+    });
+  });
+}
+
+var StyleSheetRegistry = /*#__PURE__*/function () {
   function StyleSheetRegistry(_temp) {
     var _ref = _temp === void 0 ? {} : _temp,
         _ref$styleSheet = _ref.styleSheet,
@@ -12276,8 +12438,6 @@ function () {
     this._fromServer = undefined;
     this._indices = {};
     this._instancesCounts = {};
-    this.computeId = this.createComputeId();
-    this.computeSelector = this.createComputeSelector();
   }
 
   var _proto = StyleSheetRegistry.prototype;
@@ -12361,8 +12521,6 @@ function () {
     this._fromServer = undefined;
     this._indices = {};
     this._instancesCounts = {};
-    this.computeId = this.createComputeId();
-    this.computeSelector = this.createComputeSelector();
   };
 
   _proto.cssRules = function cssRules() {
@@ -12382,81 +12540,29 @@ function () {
     .filter(function (rule) {
       return Boolean(rule[1]);
     }));
-  }
-  /**
-   * createComputeId
-   *
-   * Creates a function to compute and memoize a jsx id from a basedId and optionally props.
-   */
-  ;
+  };
 
-  _proto.createComputeId = function createComputeId() {
-    var cache = {};
-    return function (baseId, props) {
-      if (!props) {
-        return "jsx-" + baseId;
-      }
-
-      var propsToString = String(props);
-      var key = baseId + propsToString; // return `jsx-${hashString(`${baseId}-${propsToString}`)}`
-
-      if (!cache[key]) {
-        cache[key] = "jsx-" + (0, _stringHash["default"])(baseId + "-" + propsToString);
-      }
-
-      return cache[key];
-    };
-  }
-  /**
-   * createComputeSelector
-   *
-   * Creates a function to compute and memoize dynamic selectors.
-   */
-  ;
-
-  _proto.createComputeSelector = function createComputeSelector(selectoPlaceholderRegexp) {
-    if (selectoPlaceholderRegexp === void 0) {
-      selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g;
-    }
-
-    var cache = {};
-    return function (id, css) {
-      // Sanitize SSR-ed CSS.
-      // Client side code doesn't need to be sanitized since we use
-      // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
-      if (!this._isBrowser) {
-        css = sanitize(css);
-      }
-
-      var idcss = id + css;
-
-      if (!cache[idcss]) {
-        cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
-      }
-
-      return cache[idcss];
-    };
+  _proto.styles = function styles(options) {
+    return mapRulesToStyle(this.cssRules(), options);
   };
 
   _proto.getIdAndRules = function getIdAndRules(props) {
-    var _this4 = this;
-
     var css = props.children,
         dynamic = props.dynamic,
         id = props.id;
 
     if (dynamic) {
-      var styleId = this.computeId(id, dynamic);
+      var styleId = (0, _hash.computeId)(id, dynamic);
       return {
         styleId: styleId,
         rules: Array.isArray(css) ? css.map(function (rule) {
-          return _this4.computeSelector(styleId, rule);
-        }) : [this.computeSelector(styleId, css)]
+          return (0, _hash.computeSelector)(styleId, rule);
+        }) : [(0, _hash.computeSelector)(styleId, css)]
       };
     }
 
     return {
-      styleId: this.computeId(id),
+      styleId: (0, _hash.computeId)(id),
       rules: Array.isArray(css) ? css : [css]
     };
   }
@@ -12479,13 +12585,112 @@ function () {
   return StyleSheetRegistry;
 }();
 
-exports["default"] = StyleSheetRegistry;
+exports.StyleSheetRegistry = StyleSheetRegistry;
 
 function invariant(condition, message) {
   if (!condition) {
     throw new Error("StyleSheetRegistry: " + message + ".");
   }
 }
+
+var StyleSheetContext = (0, _react.createContext)(null);
+exports.StyleSheetContext = StyleSheetContext;
+
+function createStyleRegistry() {
+  return new StyleSheetRegistry();
+}
+
+function StyleRegistry(_ref2) {
+  var configuredRegistry = _ref2.registry,
+      children = _ref2.children;
+  var rootRegistry = (0, _react.useContext)(StyleSheetContext);
+
+  var _useState = (0, _react.useState)(function () {
+    return rootRegistry || configuredRegistry || createStyleRegistry();
+  }),
+      registry = _useState[0];
+
+  return _react["default"].createElement(StyleSheetContext.Provider, {
+    value: registry
+  }, children);
+}
+
+function useStyleRegistry() {
+  return (0, _react.useContext)(StyleSheetContext);
+}
+
+/***/ }),
+
+/***/ 522:
+/***/ (function(module) {
+
+module.exports = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __nccwpck_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			__webpack_modules__[moduleId](module, module.exports, __nccwpck_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 		}
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+var exports = __webpack_exports__;
+
+
+exports.__esModule = true;
+exports.style = exports.useStyleRegistry = exports.createStyleRegistry = exports.StyleRegistry = void 0;
+
+var _stylesheetRegistry = __nccwpck_require__(147);
+
+exports.StyleRegistry = _stylesheetRegistry.StyleRegistry;
+exports.createStyleRegistry = _stylesheetRegistry.createStyleRegistry;
+exports.useStyleRegistry = _stylesheetRegistry.useStyleRegistry;
+
+var _style = _interopRequireDefault(__nccwpck_require__(449));
+
+exports.style = _style["default"];
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+}();
+module.exports = __webpack_exports__;
+/******/ })()
+;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js"), "/"))
 
 /***/ }),
 
@@ -12496,7 +12701,7 @@ function invariant(condition, message) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./dist/style */ "./node_modules/styled-jsx/dist/style.js")
+module.exports = __webpack_require__(/*! ./dist/index */ "./node_modules/styled-jsx/dist/index/index.js").style
 
 
 /***/ }),
@@ -12636,7 +12841,7 @@ var GlobalStyles = __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjeremie%2Fcode%2Felis-records-website%2Fpages%2Findex.js ***!
   \************************************************************************************************************************************/
@@ -12648,16 +12853,16 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ "dll-reference dll_ef0ff7c60362f24a921f":
+/***/ "dll-reference dll_b0ae7f9d5a2cb9eeeb96":
 /*!*******************************************!*\
-  !*** external "dll_ef0ff7c60362f24a921f" ***!
+  !*** external "dll_b0ae7f9d5a2cb9eeeb96" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_ef0ff7c60362f24a921f;
+module.exports = dll_b0ae7f9d5a2cb9eeeb96;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
