@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import TracklistAndPlayer from "./TracklistAndPlayer";
+import { motion } from "framer-motion";
 
 function ReleaseEntry(props) {
   const [playerDisplayId, setPlayerDisplayId] = useState(null);
@@ -32,14 +33,19 @@ function ReleaseEntry(props) {
         <div>
           <div className="release-entry-wrapper">
             <div onClick={showPlayer}>
-              <img
-                className="release-cover"
-                key={`cover${index}`}
-                src={release.data.cover.url.slice(0, -21)}
-                alt="release-cover"
-                data-tag={index}
-              />
-              <div className="release-details">
+              <motion.div 
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.7 }}
+                initial={{ opacity: 0 }}>
+                <img
+                  className="release-cover"
+                  key={`cover${index}`}
+                  src={release.data.cover.url.slice(0, -21)}
+                  alt="release-cover"
+                  data-tag={index}
+                />
+              </motion.div>
+               <div className="release-details">
                 <div
                   key={`artist${index}`}
                   className="artist-name"
