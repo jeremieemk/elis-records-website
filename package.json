@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.1.6",
+    "next": "^12.1.0",
     "next-fonts": "^1.5.1",
     "prismic-dom": "^2.2.7",
     "prismic-javascript": "^3.0.2",
