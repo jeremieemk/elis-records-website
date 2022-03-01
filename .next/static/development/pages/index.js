@@ -9686,11 +9686,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _utils_console_warn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/console/warn */ "./node_modules/react-ga/dist/esm/utils/console/warn.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -9702,15 +9702,19 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -9720,14 +9724,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var NEWTAB = '_blank';
 var MIDDLECLICK = 1;
 
-var OutboundLink =
-/*#__PURE__*/
-function (_Component) {
+var OutboundLink = /*#__PURE__*/function (_Component) {
   _inherits(OutboundLink, _Component);
 
-  function OutboundLink() {
-    var _getPrototypeOf2;
+  var _super = _createSuper(OutboundLink);
 
+  function OutboundLink() {
     var _this;
 
     _classCallCheck(this, OutboundLink);
@@ -9736,7 +9738,7 @@ function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(OutboundLink)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "handleClick", function (event) {
       var _this$props = _this.props,
@@ -9773,20 +9775,22 @@ function (_Component) {
     value: function render() {
       var _this$props2 = this.props,
           href = _this$props2.to,
-          oldProps = _objectWithoutProperties(_this$props2, ["to"]);
+          target = _this$props2.target,
+          oldProps = _objectWithoutProperties(_this$props2, ["to", "target"]);
 
-      var props = _objectSpread({}, oldProps, {
+      var props = _objectSpread(_objectSpread({}, oldProps), {}, {
+        target: target,
         href: href,
         onClick: this.handleClick
       });
 
-      if (this.props.target === NEWTAB) {
-        props.rel = 'noopener noreferrer';
+      if (target === NEWTAB) {
+        props.rel = "".concat(props.rel ? props.rel : '', " noopener noreferrer").trim();
       }
 
       delete props.eventLabel;
       delete props.trackerNames;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('a', props);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('a', props);
     }
   }]);
 
@@ -9797,22 +9801,20 @@ _defineProperty(OutboundLink, "trackLink", function () {
   Object(_utils_console_warn__WEBPACK_IMPORTED_MODULE_2__["default"])('ga tracking not enabled');
 });
 
-_defineProperty(OutboundLink, "propTypes", {
+
+OutboundLink.propTypes = {
   eventLabel: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
   target: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   to: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   trackerNames: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string)
-});
-
-_defineProperty(OutboundLink, "defaultProps", {
+};
+OutboundLink.defaultProps = {
   target: null,
   to: null,
   onClick: null,
   trackerNames: null
-});
-
-
+};
 
 /***/ }),
 
@@ -9820,11 +9822,12 @@ _defineProperty(OutboundLink, "defaultProps", {
 /*!************************************************!*\
   !*** ./node_modules/react-ga/dist/esm/core.js ***!
   \************************************************/
-/*! exports provided: initialize, ga, set, send, pageview, modalview, timing, event, exception, plugin, outboundLink, testModeAPI, default */
+/*! exports provided: addTrackers, initialize, ga, set, send, pageview, modalview, timing, event, exception, plugin, outboundLink, testModeAPI, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addTrackers", function() { return addTrackers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialize", function() { return initialize; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ga", function() { return ga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "set", function() { return set; });
@@ -9850,19 +9853,23 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 /**
  * React Google Analytics Module
@@ -9889,6 +9896,7 @@ var _debug = false;
 var _titleCase = true;
 var _testMode = false;
 var _alwaysSendToDefaultTracker = true;
+var _redactEmail = true;
 
 var internalGa = function internalGa() {
   var _window;
@@ -9900,7 +9908,7 @@ var internalGa = function internalGa() {
 };
 
 function _format(s) {
-  return Object(_utils_format__WEBPACK_IMPORTED_MODULE_0__["default"])(s, _titleCase);
+  return Object(_utils_format__WEBPACK_IMPORTED_MODULE_0__["default"])(s, _titleCase, _redactEmail);
 }
 
 function _gaCommand(trackerNames) {
@@ -9941,6 +9949,10 @@ function _initialize(gaTrackingID, options) {
       _titleCase = false;
     }
 
+    if (options.redactEmail === false) {
+      _redactEmail = false;
+    }
+
     if (options.useExistingGa) {
       return;
     }
@@ -9953,19 +9965,7 @@ function _initialize(gaTrackingID, options) {
   }
 }
 
-function initialize(configsOrTrackingId, options) {
-  if (options && options.testMode === true) {
-    _testMode = true;
-  } else {
-    if (_isNotBrowser) {
-      return false;
-    }
-
-    if (!options || options.standardImplementation !== true) Object(_utils_loadGA__WEBPACK_IMPORTED_MODULE_3__["default"])(options);
-  }
-
-  _alwaysSendToDefaultTracker = options && typeof options.alwaysSendToDefaultTracker === 'boolean' ? options.alwaysSendToDefaultTracker : true;
-
+function addTrackers(configsOrTrackingId, options) {
   if (Array.isArray(configsOrTrackingId)) {
     configsOrTrackingId.forEach(function (config) {
       if (_typeof(config) !== 'object') {
@@ -9981,6 +9981,20 @@ function initialize(configsOrTrackingId, options) {
 
   return true;
 }
+function initialize(configsOrTrackingId, options) {
+  if (options && options.testMode === true) {
+    _testMode = true;
+  } else {
+    if (_isNotBrowser) {
+      return;
+    }
+
+    if (!options || options.standardImplementation !== true) Object(_utils_loadGA__WEBPACK_IMPORTED_MODULE_3__["default"])(options);
+  }
+
+  _alwaysSendToDefaultTracker = options && typeof options.alwaysSendToDefaultTracker === 'boolean' ? options.alwaysSendToDefaultTracker : true;
+  addTrackers(configsOrTrackingId, options);
+}
 /**
  * ga:
  * Returns the original GA object.
@@ -9995,7 +10009,7 @@ function ga() {
     internalGa.apply(void 0, args);
 
     if (_debug) {
-      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])('called ga(\'arguments\');');
+      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('arguments');");
       Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("with arguments: ".concat(JSON.stringify(args)));
     }
   }
@@ -10027,7 +10041,7 @@ function set(fieldsObject, trackerNames) {
   _gaCommand(trackerNames, 'set', fieldsObject);
 
   if (_debug) {
-    Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])('called ga(\'set\', fieldsObject);');
+    Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('set', fieldsObject);");
     Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("with fieldsObject: ".concat(JSON.stringify(fieldsObject)));
   }
 }
@@ -10044,7 +10058,7 @@ function send(fieldObject, trackerNames) {
   _gaCommand(trackerNames, 'send', fieldObject);
 
   if (_debug) {
-    Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])('called ga(\'send\', fieldObject);');
+    Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('send', fieldObject);");
     Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("with fieldObject: ".concat(JSON.stringify(fieldObject)));
     Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("with trackers: ".concat(JSON.stringify(trackerNames)));
   }
@@ -10083,7 +10097,7 @@ function pageview(rawPath, trackerNames, title) {
     }, extraFields));
 
     if (_debug) {
-      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])('called ga(\'send\', \'pageview\', path);');
+      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('send', 'pageview', path);");
       var extraLog = '';
 
       if (title) {
@@ -10121,7 +10135,7 @@ function modalview(rawModalName, trackerNames) {
     _gaCommand(trackerNames, 'send', 'pageview', path);
 
     if (_debug) {
-      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])('called ga(\'send\', \'pageview\', path);');
+      Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("called ga('send', 'pageview', path);");
       Object(_utils_console_log__WEBPACK_IMPORTED_MODULE_5__["default"])("with path: ".concat(path));
     }
   }
@@ -10146,7 +10160,7 @@ function timing() {
   var trackerNames = arguments.length > 1 ? arguments[1] : undefined;
 
   if (typeof ga === 'function') {
-    if (!category || !variable || !value || typeof value !== 'number') {
+    if (!category || !variable || typeof value !== 'number') {
       Object(_utils_console_warn__WEBPACK_IMPORTED_MODULE_4__["default"])('args.category, args.variable ' + 'AND args.value are required in timing() ' + 'AND args.value has to be a number');
       return;
     } // Required Fields
@@ -10175,7 +10189,7 @@ function timing() {
  * @param args.value {Int} optional
  * @param args.nonInteraction {boolean} optional
  * @param args.transport {string} optional
- * @param {Array} trackerNames - (optional) a list of extra trackers to run the command on
+ * @param {{action: string, category: string}} trackerNames - (optional) a list of extra trackers to run the command on
  */
 
 function event() {
@@ -10347,11 +10361,15 @@ var plugin = {
     var payload;
     var actionType;
 
-    if ((arguments.length <= 2 ? 0 : arguments.length - 2) === 1) {
-      payload = arguments.length <= 2 ? undefined : arguments[2];
+    for (var _len3 = arguments.length, args = new Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
+      args[_key3 - 2] = arguments[_key3];
+    }
+
+    if (args.length === 1) {
+      payload = args[0];
     } else {
-      actionType = arguments.length <= 2 ? undefined : arguments[2];
-      payload = arguments.length <= 3 ? undefined : arguments[3];
+      actionType = args[0];
+      payload = args[1];
     }
 
     if (typeof ga === 'function') {
@@ -10469,12 +10487,13 @@ var testModeAPI = _utils_testModeAPI__WEBPACK_IMPORTED_MODULE_6__["default"];
 /*!*************************************************!*\
   !*** ./node_modules/react-ga/dist/esm/index.js ***!
   \*************************************************/
-/*! exports provided: initialize, ga, set, send, pageview, modalview, timing, event, exception, plugin, outboundLink, testModeAPI, OutboundLink, default */
+/*! exports provided: initialize, addTrackers, ga, set, send, pageview, modalview, timing, event, exception, plugin, outboundLink, testModeAPI, OutboundLink, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialize", function() { return initialize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addTrackers", function() { return addTrackers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ga", function() { return ga; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "set", function() { return set; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "send", function() { return send; });
@@ -10491,28 +10510,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./core */ "./node_modules/react-ga/dist/esm/core.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 var initialize = _core__WEBPACK_IMPORTED_MODULE_1__["initialize"];
+
+var addTrackers = _core__WEBPACK_IMPORTED_MODULE_1__["addTrackers"];
+
 var ga = _core__WEBPACK_IMPORTED_MODULE_1__["ga"];
+
 var set = _core__WEBPACK_IMPORTED_MODULE_1__["set"];
+
 var send = _core__WEBPACK_IMPORTED_MODULE_1__["send"];
+
 var pageview = _core__WEBPACK_IMPORTED_MODULE_1__["pageview"];
+
 var modalview = _core__WEBPACK_IMPORTED_MODULE_1__["modalview"];
+
 var timing = _core__WEBPACK_IMPORTED_MODULE_1__["timing"];
+
 var event = _core__WEBPACK_IMPORTED_MODULE_1__["event"];
+
 var exception = _core__WEBPACK_IMPORTED_MODULE_1__["exception"];
+
 var plugin = _core__WEBPACK_IMPORTED_MODULE_1__["plugin"];
+
 var outboundLink = _core__WEBPACK_IMPORTED_MODULE_1__["outboundLink"];
+
 var testModeAPI = _core__WEBPACK_IMPORTED_MODULE_1__["testModeAPI"];
+
 _components_OutboundLink__WEBPACK_IMPORTED_MODULE_0__["default"].origTrackLink = _components_OutboundLink__WEBPACK_IMPORTED_MODULE_0__["default"].trackLink;
 _components_OutboundLink__WEBPACK_IMPORTED_MODULE_0__["default"].trackLink = _core__WEBPACK_IMPORTED_MODULE_1__["outboundLink"];
 var OutboundLink = _components_OutboundLink__WEBPACK_IMPORTED_MODULE_0__["default"];
-/* harmony default export */ __webpack_exports__["default"] = (_objectSpread({}, _core__WEBPACK_IMPORTED_MODULE_1__, {
+/* harmony default export */ __webpack_exports__["default"] = (_objectSpread(_objectSpread({}, _core__WEBPACK_IMPORTED_MODULE_1__), {}, {
   OutboundLink: OutboundLink
 }));
 
@@ -10560,24 +10593,26 @@ function warn(s) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return format; });
-/* harmony import */ var _mightBeEmail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mightBeEmail */ "./node_modules/react-ga/dist/esm/utils/mightBeEmail.js");
+/* harmony import */ var _redactEmail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./redactEmail */ "./node_modules/react-ga/dist/esm/utils/redactEmail.js");
 /* harmony import */ var _toTitleCase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toTitleCase */ "./node_modules/react-ga/dist/esm/utils/toTitleCase.js");
-/* harmony import */ var _console_warn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./console/warn */ "./node_modules/react-ga/dist/esm/utils/console/warn.js");
 
 
+function format() {
+  var s = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var titleCase = arguments.length > 1 ? arguments[1] : undefined;
+  var redactingEmail = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
-var redacted = 'REDACTED (Potential Email Address)';
-function format(s, titleCase) {
-  if (Object(_mightBeEmail__WEBPACK_IMPORTED_MODULE_0__["default"])(s)) {
-    Object(_console_warn__WEBPACK_IMPORTED_MODULE_2__["default"])('This arg looks like an email address, redacting.');
-    return redacted;
-  }
+  var _str = s || '';
 
   if (titleCase) {
-    return Object(_toTitleCase__WEBPACK_IMPORTED_MODULE_1__["default"])(s);
+    _str = Object(_toTitleCase__WEBPACK_IMPORTED_MODULE_1__["default"])(s);
   }
 
-  return s;
+  if (redactingEmail) {
+    _str = Object(_redactEmail__WEBPACK_IMPORTED_MODULE_0__["default"])(_str);
+  }
+
+  return _str;
 }
 
 /***/ }),
@@ -10591,17 +10626,21 @@ function format(s, titleCase) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var isLoaded = false;
 /* harmony default export */ __webpack_exports__["default"] = (function (options) {
+  if (isLoaded) return;
+  isLoaded = true;
   var gaAddress = 'https://www.google-analytics.com/analytics.js';
 
   if (options && options.gaAddress) {
     gaAddress = options.gaAddress;
   } else if (options && options.debug) {
     gaAddress = 'https://www.google-analytics.com/analytics_debug.js';
-  } // https://developers.google.com/analytics/devguides/collection/analyticsjs/
+  }
+
+  var onerror = options && options.onerror; // https://developers.google.com/analytics/devguides/collection/analyticsjs/
 
   /* eslint-disable */
-
 
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -10611,6 +10650,7 @@ __webpack_require__.r(__webpack_exports__);
     a = s.createElement(o), m = s.getElementsByTagName(o)[0];
     a.async = 1;
     a.src = g;
+    a.onerror = onerror;
     m.parentNode.insertBefore(a, m);
   })(window, document, 'script', gaAddress, 'ga');
   /* eslint-enable */
@@ -10634,6 +10674,32 @@ __webpack_require__.r(__webpack_exports__);
 function mightBeEmail(s) {
   // There's no point trying to validate rfc822 fully, just look for ...@...
   return typeof s === 'string' && s.indexOf('@') !== -1;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-ga/dist/esm/utils/redactEmail.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-ga/dist/esm/utils/redactEmail.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return redactEmail; });
+/* harmony import */ var _console_warn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./console/warn */ "./node_modules/react-ga/dist/esm/utils/console/warn.js");
+/* harmony import */ var _mightBeEmail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mightBeEmail */ "./node_modules/react-ga/dist/esm/utils/mightBeEmail.js");
+
+
+var redacted = 'REDACTED (Potential Email Address)';
+function redactEmail(string) {
+  if (Object(_mightBeEmail__WEBPACK_IMPORTED_MODULE_1__["default"])(string)) {
+    Object(_console_warn__WEBPACK_IMPORTED_MODULE_0__["default"])('This arg looks like an email address, redacting.');
+    return redacted;
+  }
+
+  return string;
 }
 
 /***/ }),
@@ -10702,7 +10768,8 @@ __webpack_require__.r(__webpack_exports__);
  * https://github.com/gouch/to-title-case
  */
 
-var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i; // test
+
 function toTitleCase(string) {
   return Object(_trim__WEBPACK_IMPORTED_MODULE_0__["default"])(string).replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function (match, index, title) {
     if (index > 0 && index + match.length !== title.length && match.search(smallWords) > -1 && title.charAt(index - 2) !== ':' && (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') && title.charAt(index - 1).search(/[^\s-]/) < 0) {
@@ -10732,7 +10799,7 @@ __webpack_require__.r(__webpack_exports__);
 // GA strings need to have leading/trailing whitespace trimmed, and not all
 // browsers have String.prototoype.trim().
 function trim(s) {
-  return s.replace(/^\s+|\s+$/g, '');
+  return s && s.toString().replace(/^\s+|\s+$/g, '');
 }
 
 /***/ }),
