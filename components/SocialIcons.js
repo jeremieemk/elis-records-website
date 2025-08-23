@@ -7,7 +7,7 @@ function SocialIcons() {
       <a href="https://www.facebook.com/ElisRecords/" target="_blank">
         <img className="social-icon-pic fb" src="/img/fb-new.png" alt="fb" />
       </a>
-      <a href="mailto:ola@elis-records.com" target="_blank">
+      <a href="mailto:jeremie@elis-records.com" target="_blank">
         <img className="social-icon-pic mail" src="/img/mail.png" alt="mail" />
       </a>
       <style jsx>{`
